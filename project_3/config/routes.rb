@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'drinks/result'
 
-  get 'drinks/adv-result'
+  get 'drinks/adv_result'
 
   get 'home/index'
 
@@ -17,11 +17,17 @@ Rails.application.routes.draw do
   get "/signup" => "users#new"
   post "/users" => "users#create"
 
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+
+  # resources :drinks, except: [:edit, :update]
+
+
   # root 'welcome#index'
 
   # Example of regular route:
