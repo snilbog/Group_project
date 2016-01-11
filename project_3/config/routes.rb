@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'drinks/index'
+
+  get 'drinks/show'
+
+  get 'drinks/result'
+
+  get 'drinks/adv-result'
+
   get 'home/index'
 
   get "/login" => "sessions#new"
