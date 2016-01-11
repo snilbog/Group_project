@@ -8,6 +8,6 @@ class DrinksController < ApplicationController
   def result
   end
 
-  def adv-result
+  def adv_result
   end
 end

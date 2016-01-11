@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'comments/show'
+
+  get 'comments/new'
+
+  get 'comments/edit'
+
+  get 'comments/destroy'
+
+  get 'favorites/index'
+
+  get 'favorites/new'
+
+  get 'favorites/create'
+
+  get 'favorites/destroy'
+
   get 'drinks/index'
 
   get 'drinks/show'
