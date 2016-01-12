@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   post "/users" => "users#create"
 
   get "/drinks/index" => "drinks#index"
+  get "/drinks/adv" => "drinks#adv_search"
+  post "/drinks/adv_result" => "drinks#adv_result"
 
 
 

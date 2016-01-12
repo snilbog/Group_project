@@ -1,8 +1,13 @@
 class DrinksController < ApplicationController
+	before_action :is_authenticated?
+
   def index
+  	
+
+  end
+
+  def adv_search
   	base_url = 'http://addb.absolutdrinks.com/ingredients/'
-  	# @searchTerm = params[:q]
-  	# response = RestClient.get base_url, {:params => {:term => params[:q]}}
   	response = RestClient.get base_url, {
   		:params => {
   			:apiKey => ENV['ABSOLUT_KEY'],
@@ -20,7 +25,7 @@ class DrinksController < ApplicationController
   		@type.push(ingredient['type']) unless @type.include?(ingredient['type'])
   	end
 
-
+  	# Get all ingredients and put into appropriate type to display them ass checkboxes
 	@spirits = []
 	@mixers = []
 	@others = []
@@ -28,7 +33,6 @@ class DrinksController < ApplicationController
 	@vodka = []
 	@spices_herbs = []
 	@rum = []
-	@base_spirits = []
 	@brandy = []
 	@berries = []
 	@whisky = []
@@ -40,37 +44,34 @@ class DrinksController < ApplicationController
   	@ingredients = JSON.parse(response)['result'].each do |ingredient|
   		case ingredient['type']
 	  		when "spirits-other"
-	  			@spirits.push(ingredient['name']) unless @spirits.include?(ingredient['name'])
+	  			@spirits.push(ingredient['id']) unless @spirits.include?(ingredient['id'])
 	  		when "mixers"
-	  			@mixers.push(ingredient['name']) unless @mixers.include?(ingredient['name'])
+	  			@mixers.push(ingredient['id']) unless @mixers.include?(ingredient['id'])
 	  		when "others"
-	  			@others.push(ingredient['name']) unless @others.include?(ingredient['name'])
+	  			@others.push(ingredient['id']) unless @others.include?(ingredient['id'])
 	  		when "fruits"
-	  			@fruits.push(ingredient['name']) unless @fruits.include?(ingredient['name'])
+	  			@fruits.push(ingredient['id']) unless @fruits.include?(ingredient['id'])
 	  		when "vodka"
-	  			@vodka.push(ingredient['name']) unless @vodka.include?(ingredient['name'])
+	  			@vodka.push(ingredient['id']) unless @vodka.include?(ingredient['id'])
 	  		when "spices-herbs"
-	  			@spices_herbs.push(ingredient['name']) unless @spices_herbs.include?(ingredient['name'])
+	  			@spices_herbs.push(ingredient['id']) unless @spices_herbs.include?(ingredient['id'])
 	  		when "rum"
-	  			@rum.push(ingredient['name']) unless @rum.include?(ingredient['name'])
-	  		when "base spirits"
-	  			@base_spirits.push(ingredient['name']) unless @base_spirits.include?(ingredient['name'])
+	  			@rum.push(ingredient['id']) unless @rum.include?(ingredient['id'])
 	  		when "brandy"
-	  			@brandy.push(ingredient['name']) unless @brandy.include?(ingredient['name'])
+	  			@brandy.push(ingredient['id']) unless @brandy.include?(ingredient['id'])
 	  		when "berries"
-	  			@berries.push(ingredient['name']) unless @berries.include?(ingredient['name'])
+	  			@berries.push(ingredient['id']) unless @berries.include?(ingredient['id'])
 	  		when "whisky"
-	  			@whisky.push(ingredient['name']) unless @whisky.include?(ingredient['name'])
+	  			@whisky.push(ingredient['id']) unless @whisky.include?(ingredient['id'])
 	  		when "gin"
-	  			@gin.push(ingredient['name']) unless @gin.include?(ingredient['name'])
+	  			@gin.push(ingredient['id']) unless @gin.include?(ingredient['id'])
 	  		when "ice"
-	  			@ice.push(ingredient['name']) unless @ice.include?(ingredient['name'])
+	  			@ice.push(ingredient['id']) unless @ice.include?(ingredient['id'])
 	  		when "tequila"
-	  			@tequila.push(ingredient['name']) unless @tequila.include?(ingredient['name'])
+	  			@tequila.push(ingredient['id']) unless @tequila.include?(ingredient['id'])
 	  		when "decoration"
-	  			@decoration.push(ingredient['name']) unless @decoration.include?(ingredient['name'])
+	  			@decoration.push(ingredient['id']) unless @decoration.include?(ingredient['id'])
   		end
-
   	end
   end
 
@@ -81,5 +82,18 @@ class DrinksController < ApplicationController
   end
 
   def adv_result
+  	# checked checkboxes (with same name) are passed automatically as an array 
+  	# concat the array with join to match the api search url
+  	search_term = params[:s].join("/and/")
+  	base_url = 'http://addb.absolutdrinks.com/drinks/with/' + search_term
+  	response = RestClient.get base_url, {
+  		:params => {
+  			:apiKey => ENV['ABSOLUT_KEY'],
+  			:start => '0',
+  			:pageSize => '500'
+  		}
+  	}
+  	@drinks = JSON.parse(response)
+  	# render json: @drinks
   end
 end
