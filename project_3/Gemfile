@@ -28,9 +28,15 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap'
 
+gem 'bootstrap_form'
+
+gem 'rest-client'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
+
 gem "pry-rails", :group => :development
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

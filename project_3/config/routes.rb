@@ -1,14 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'drinks/index'
+  get "/favorites" => "favorites#index"
 
-  get 'drinks/show'
-
-  get 'drinks/result'
-
-  get 'drinks/adv_result'
-
-  get 'home/index'
 
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
@@ -17,6 +10,9 @@ Rails.application.routes.draw do
   get "/signup" => "users#new"
   post "/users" => "users#create"
 
+  get "/drinks/index" => "drinks#index"
+  get "/drinks/adv" => "drinks#adv_search"
+  post "/drinks/adv_result" => "drinks#adv_result"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -24,6 +20,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+  resources :favorites
 
   # resources :drinks, except: [:edit, :update]
 
