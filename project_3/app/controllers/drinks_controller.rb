@@ -82,6 +82,7 @@ class DrinksController < ApplicationController
   end
 
   def adv_result
+
   	# checked checkboxes (with same name) are passed automatically as an array 
   	# concat the array with join to match the api search url
   	search_term = params[:s].join("/and/")
