@@ -1,8 +1,37 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   get "/favorites" => "favorites#index"
 
   
+=======
+  # get 'comments/show'
+
+  # get 'comments/new'
+
+  # get 'comments/edit'
+
+  # get 'comments/destroy'
+
+  # get 'favorites/index'
+
+  # get 'favorites/new'
+
+  # get 'favorites/create'
+
+  # get 'favorites/destroy'
+
+  # get 'drinks/index'
+
+  # get 'drinks/show'
+
+  # get 'drinks/result'
+
+  # get 'drinks/adv_result'
+
+  # get 'home/index'
+  get "/favorites" => "favorites#index"
+>>>>>>> controllers
 
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
@@ -12,12 +41,12 @@ Rails.application.routes.draw do
   post "/users" => "users#create"
 
 
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+  resources :favorites
 
   # resources :drinks, except: [:edit, :update]
 
