@@ -69,7 +69,7 @@
             <div class="navbar" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Drinks</a>
+                        <a href="/drinks/index">Drinks</a>
                     </li>
                     <li>
                         <a href="#">About</a>
@@ -80,6 +80,16 @@
                       <li>
                         <a href="#">Signup</a>
                     </li>
+                    <div class="col-sm-3 col-md-3 pull-right">
+		<form class="navbar-form" role="search">
+		<div class="input-group">
+		<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+		<div class="input-group-btn">
+		   <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+           </div>
+       </div>
+       </form>
+       </div>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -102,26 +112,4 @@
 
   </body>
 
-<html>
-<head>
-  <title>Drink-M8?</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<% if @current_user %>
-	Signed in as <%= @current_user.email %> | <%= link_to "Logout", "/logout" %>
-	<% else %>
-	<%= link_to "Login", "/login" %> | <%= link_to "Signup", "/signup" %>
-<% end %>
-
-<%= render "partials/flash" %>
-
-<%= yield %>
-
-</body>
 </html>
