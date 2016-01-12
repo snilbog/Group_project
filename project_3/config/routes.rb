@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'drinks/index'
+  # get 'drinks/index'
 
-  get 'drinks/show'
+  # get 'drinks/show'
 
-  get 'drinks/result'
+  # get 'drinks/result'
 
-  get 'drinks/adv_result'
+  # get 'drinks/adv_result'
 
-  get 'home/index'
+  # get 'home/index'
 
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   get "/signup" => "users#new"
   post "/users" => "users#create"
+
+  get "/drinks/index" => "drinks#index"
 
 
 
