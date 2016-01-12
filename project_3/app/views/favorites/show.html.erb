@@ -9,3 +9,6 @@
 	</div>
 <% end %>
 
+<% bootstrap_form_for @comments do |comm| %>
+	<%= comm.text_field :content
+THIS IS WHERE YOU ADD COMMENTS
