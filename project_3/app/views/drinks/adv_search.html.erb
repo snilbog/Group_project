@@ -1,0 +1,88 @@
+<%= form_tag("/drinks/adv_result", method: "post") do %>
+	<h3>Spirits:</h3>
+	<% @spirits.each do |s| %>
+	<%= check_box_tag('s[]', s) %>
+	<%= label_tag(:s, s) %>
+	<% end %>
+
+	<h3>Mixers:</h3>
+	<% @mixers.each do |s| %>
+	<%= check_box_tag('s[]', s) %>
+	<%= label_tag(:s, s) %>
+	<% end %>
+
+	<h3>Vodka:</h3>
+	<% @vodka.each do |s| %>
+	<%= check_box_tag('s[]', s) %>
+	<%= label_tag(:s, s) %>
+	<% end %>
+
+	<h3>Rum:</h3>
+	<% @rum.each do |s| %>
+	<%= check_box_tag('s[]', s) %>
+	<%= label_tag(:s, s) %>
+	<% end %>
+
+	<h3>Brandy:</h3>
+	<% @brandy.each do |s| %>
+	<%= check_box_tag('s[]', s) %>
+	<%= label_tag(:s, s) %>
+	<% end %>
+
+	<h3>Whisky:</h3>
+	<% @whisky.each do |s| %>
+	<%= check_box_tag('s[]', s) %>
+	<%= label_tag(:s, s) %>
+	<% end %>
+
+	<h3>Gin:</h3>
+	<% @gin.each do |s| %>
+	<%= check_box_tag('s[]', s) %>
+	<%= label_tag(:s, s) %>
+	<% end %>
+
+	<h3>Tequila:</h3>
+	<% @tequila.each do |s| %>
+	<%= check_box_tag('s[]', s) %>
+	<%= label_tag(:s, s) %>
+	<% end %>
+
+
+	<h3>Spices-herbs:</h3>
+	<% @spices_herbs.each do |s| %>
+	<%= check_box_tag('s[]', s) %>
+	<%= label_tag(:s, s) %>
+	<% end %>
+
+	<h3>Fruits:</h3>
+	<% @fruits.each do |s| %>
+	<%= check_box_tag('s[]', s) %>
+	<%= label_tag(:s, s) %>
+	<% end %>
+
+	<h3>Berries:</h3>
+	<% @berries.each do |s| %>
+	<%= check_box_tag('s[]', s) %>
+	<%= label_tag(:s, s) %>
+	<% end %>
+
+	<h3>Ice:</h3>
+	<% @ice.each do |s| %>
+	<%= check_box_tag('s[]', s) %>
+	<%= label_tag(:s, s) %>
+	<% end %>
+
+	<h3>Decoration:</h3>
+	<% @decoration.each do |s| %>
+	<%= check_box_tag('s[]', s) %>
+	<%= label_tag(:s, s) %>
+	<% end %>
+
+	<h3>Others:</h3>
+	<% @others.each do |s| %>
+	<%= check_box_tag('s[]', s) %>
+	<%= label_tag(:s, s) %>
+	<% end %>
+
+	<%= submit_tag("submit") %>
+<% end %>

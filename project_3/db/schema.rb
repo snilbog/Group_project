@@ -43,8 +43,11 @@ ActiveRecord::Schema.define(version: 20160111224644) do
     t.integer  "user_id"
   end
 
+<<<<<<< Updated upstream
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
+=======
+>>>>>>> Stashed changes
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -55,5 +58,8 @@ ActiveRecord::Schema.define(version: 20160111224644) do
 
   add_foreign_key "comments_favorites", "comments"
   add_foreign_key "comments_favorites", "favorites"
+<<<<<<< Updated upstream
   add_foreign_key "favorites", "users"
+=======
+>>>>>>> Stashed changes
 end

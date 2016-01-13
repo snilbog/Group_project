@@ -6,15 +6,14 @@ class FavoritesController < ApplicationController
   	@favorites = Favorite.where("user_id" => @current_user.id)
   end
 
-  def new
-  end
-
  def show
     @favorite = Favorite.find params[:id]
-    @comments = Comment.where("user_id" => @current_user.id)
+    @comments = Comment.where("drink_id" => params[:id]).where("user_id" => @current_user.id)
   end
 
   def create
+  	Favorite.create post_params
+    redirect_to favorites_path
   end
 
   def destroy
@@ -28,7 +27,7 @@ class FavoritesController < ApplicationController
   private
 
   def post_params
-    params.require(:favorite).permit(:drink_id, :description, :user_id)
+    params.require(:favorites).permit(:drink_id, :description, :img, :user_id)
   end
 
 end

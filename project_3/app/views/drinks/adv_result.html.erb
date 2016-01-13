@@ -1,2 +1,21 @@
-<h1>Drinks#adv_result</h1>
-<p>Find me in app/views/drinks/adv_result.html.erb</p>
+<% @drinks.each do |res| %>
+	<div>
+		<h2><%= res['name'] %><small> Rating: <%= res['rating'] %></small></h2>
+		<h3> Ingredients: </h3>
+		<ul>
+			<% res['ingredients'].each do |el| %>
+			<li><%= el['textPlain'] %></li>
+			<% end %>
+		</ul>
+		<h3> Directions: <%= res['descriptionPlain'] %> </h3>
+	</div>
+	<%= bootstrap_form_for :favorites, url: '/favorites' do |f| %>
+		<%= f.hidden_field :drink_id, :value => res['id']  %>
+		<%= f.hidden_field :description, :value => res['descriptionPlain']  %>
+		<%= f.hidden_field :img, :value => res['name']  %>
+	    <%= f.hidden_field :user_id, :value => @current_user.id %>
+	    <%= f.submit "Add To Favorites!" %>
+	<% end %>
+
+<% end %>
+
