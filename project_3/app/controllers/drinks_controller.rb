@@ -1,5 +1,6 @@
 class DrinksController < ApplicationController
 	before_action :is_authenticated?
+	# skip_before_action :is_authenticated, only:[:adv_search]
 
   def index
   	
