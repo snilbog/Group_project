@@ -8,8 +8,14 @@
 			<% end %>
 		</ul>
 		<h3> Directions: <%= res['descriptionPlain'] %> </h3>
-
 	</div>
+	<%= bootstrap_form_for :favorites, url: '/favorites' do |f| %>
+		<%= f.hidden_field :drink_id, :value => res['id']  %>
+		<%= f.hidden_field :description, :value => res['descriptionPlain']  %>
+		<%= f.hidden_field :img, :value => res['name']  %>
+	    <%= f.hidden_field :user_id, :value => @current_user.id %>
+	    <%= f.submit "Add To Favorites!" %>
+	<% end %>
 
 <% end %>
 

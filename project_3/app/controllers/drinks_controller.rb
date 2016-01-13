@@ -1,8 +1,8 @@
 class DrinksController < ApplicationController
 	before_action :is_authenticated?
 	# skip_before_action :is_authenticated, only:[:adv_search]
-	#Don't have to be logged in to view drinks
-	skip_before_action :is_authenticated?, only: [:index, :adv_search, :adv_result, :show, :result]
+	#Don't have to be logged in to view drinks --maybe
+	skip_before_action :is_authenticated?, only: [:index, :adv_search, :show, :result]
 
   def index
   	

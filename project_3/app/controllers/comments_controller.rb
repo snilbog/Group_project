@@ -21,6 +21,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    result = Comment.destroy params[:id]
+    respond_to do |format|
+      format.html {redirect_to :comments}
+      format.json {render json: result}
+    end
   end
 
   private
