@@ -10,6 +10,12 @@ Rails.application.routes.draw do
   get "/signup" => "users#new"
   post "/users" => "users#create"
 
+  # get "favorites/:id/comments" => "comments#show", as: 'comments'
+
+  get "comments/new/:id" => "comments#new", as: "new_comment"
+  
+  post "/comments" => "comments#create"
+
   get "/drinks/index" => "drinks#index"
   get "/drinks/adv" => "drinks#adv_search"
   post "/drinks/adv_result" => "drinks#adv_result"
@@ -22,6 +28,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   resources :favorites
+  # resources :comments
 
   # resources :drinks, except: [:edit, :update]
 

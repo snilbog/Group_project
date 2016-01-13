@@ -1,7 +1,8 @@
 class DrinksController < ApplicationController
 	before_action :is_authenticated?
-	#Don't have to be logged in to view drinks
-	# skip_before_action :is_authenticated?, only: [:index, :adv_search, :adv_result, :show, :result]
+	# skip_before_action :is_authenticated, only:[:adv_search]
+	#Don't have to be logged in to view drinks --maybe
+	# skip_before_action :is_authenticated?, only: [:index, :adv_search]
 
   def index
   	
@@ -129,7 +130,6 @@ class DrinksController < ApplicationController
   			:pageSize => '500'
   		}
   	}
-  	@drinks = JSON.parse(response)
-  	# render json: @drinks
+  	@drinks = JSON.parse(response.body).first[1]
   end
 end

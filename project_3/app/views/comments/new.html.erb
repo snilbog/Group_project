@@ -1,2 +1,9 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<h1>Add Comment!</h1>
+
+<%= bootstrap_form_for :comments, url: '/comments' do |f| %>
+  <%= f.text_field :content %>
+  <%= f.hidden_field :drink_id, :value => params[:id]  %>
+  <%= f.hidden_field :user_id, :value => @current_user.id %>
+  <%= f.submit "Submit" %>
+
+<% end %>

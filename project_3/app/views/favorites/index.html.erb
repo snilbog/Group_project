@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<h1><%= @current_user.name %>s' Favorites!</h1>
-
 <head>
 
     <meta charset="utf-8">
@@ -11,12 +9,6 @@
     <meta name="author" content="">
 
     <title>Favorites</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/business-casual.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -30,16 +22,6 @@
     <![endif]-->
 
 </head>
-<% @favorites.each do |fav| %>
-	<div id="deleteMe">
-		<h2> <%= link_to fav.description, fav %> </h2>
-		<h3> <%= fav.drink_id %> </h3>
-		<p> <%= fav.user_id %> </p>
-		<%= link_to 'Delete', fav, :class => 'js-delete-btn btn btn-danger' %>
-		<%= link_to 'Add Comment', fav, :class => 'btn btn-warning' %>
-	</div>
-<% end%>
-
 <body>
 
     <div class="brand">DRINKMATE</div>
@@ -82,46 +64,22 @@
     </nav>
 
     <div class="container">
-
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">Company
-                        <strong>blog</strong>
-                    </h2>
+                    <h1 class="text-center"><%= @current_user.name %>s' Favorites!</h1>
                     <hr>
                 </div>
+                <% @favorites.each do |fav| %>
                 <div class="col-lg-12 text-center">
-                    <img class="img-responsive img-border img-full" src="img/slide-1.jpg" alt="">
-                    <h2>Post Title
-                        <br>
-                        <small>October 13, 2013</small>
-                    </h2>
-                    <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                    <a href="#" class="btn btn-default btn-lg">Read More</a>
-                    <hr>
+                    <h3> <%= link_to fav.img, fav %> </h3>
+                    <p> <%= fav.description %></p>
+                    <%= link_to 'Delete', fav, :class => 'js-delete-btn btn btn-danger' %>
+                    <%= link_to 'Add Comment', new_comment_path(fav), :class => 'btn btn-warning add-comm-btn' %>      <hr>
                 </div>
-                <div class="col-lg-12 text-center">
-                    <img class="img-responsive img-border img-full" src="img/slide-2.jpg" alt="">
-                    <h2>Post Title
-                        <br>
-                        <small>October 13, 2013</small>
-                    </h2>
-                    <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                    <a href="#" class="btn btn-default btn-lg">Read More</a>
-                    <hr>
-                </div>
-                <div class="col-lg-12 text-center">
-                    <img class="img-responsive img-border img-full" src="img/slide-3.jpg" alt="">
-                    <h2>Post Title
-                        <br>
-                        <small>October 13, 2013</small>
-                    </h2>
-                    <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                    <a href="#" class="btn btn-default btn-lg">Read More</a>
-                    <hr>
-                </div>
+                <% end %>
+
                 <div class="col-lg-12 text-center">
                     <ul class="pager">
                         <li class="previous"><a href="#">&larr; Older</a>
@@ -132,9 +90,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-    <!-- /.container -->
 
     <footer>
         <div class="container">
@@ -145,12 +101,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 
 </body>
 
