@@ -98,7 +98,7 @@ class DrinksController < ApplicationController
   			:pageSize => '500'
   		}
   	}
-  	@drinks = JSON.parse(response)
+  	@drinks = JSON.parse(response.body).first[1]
   	# render json: @drinks
   end
 end

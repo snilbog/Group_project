@@ -80,7 +80,7 @@
 
 	<h3>Others:</h3>
 	<% @others.each do |s| %>
-	<%= check_box_tag(s, s) %>
+	<%= check_box_tag('s[]', s) %>
 	<%= label_tag(:s, s) %>
 	<% end %>
 
