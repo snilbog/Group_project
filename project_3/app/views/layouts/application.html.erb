@@ -55,21 +55,21 @@
            <div class="navbar" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
                    <li>
-                       <a href="#">Drinks</a>
+                       <a href="/drinks/index">Drinks</a>
                    </li>
                    <li>
-                       <a href="#">About</a>
+                       <a href="/">About</a>
                    </li>
                    <% if @current_user %>
                     <li>
-                       <a href="#">Favorites</a>
+                       <a href="/favorites">Favorites</a>
                     </li>
                     
                     <% else %>
                 
                    <% end %>
                     <li>
-                       <a href="#">Advanced Search</a>
+                       <a href="/drinks/adv">Advanced Search</a>
                    </li>
                    <div class="col-sm-3 col-md-3 pull-right">
         <form class="navbar-form" role="search">
