@@ -7,7 +7,7 @@
 		<h3> <%= fav.drink_id %> </h3>
 		<p> <%= fav.user_id %> </p>
 		<%= link_to 'Delete', fav, :class => 'js-delete-btn btn btn-danger' %>
-		<%= link_to 'Add Comment', fav, :class => 'btn btn-warning' %>
+		<%= link_to 'Add Comment', new_comment_path(fav), :class => 'btn btn-warning add-comm-btn' %>
 	</div>
 <% end%>
 

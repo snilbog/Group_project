@@ -6,15 +6,13 @@ class FavoritesController < ApplicationController
   	@favorites = Favorite.where("user_id" => @current_user.id)
   end
 
-  def new
-  end
-
  def show
     @favorite = Favorite.find params[:id]
-    @comments = Comment.where("user_id" => @current_user.id)
+    @comments = Comment.where("drink_id" => params[:id]).where("user_id" => @current_user.id)
   end
 
   def create
+  	
   end
 
   def destroy
