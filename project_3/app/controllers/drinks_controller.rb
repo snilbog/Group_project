@@ -1,7 +1,7 @@
 class DrinksController < ApplicationController
 	before_action :is_authenticated?
 	#Don't have to be logged in to view drinks
-	skip_before_action :is_authenticated?, only: [:index, :adv_search, :adv_result, :show, :result]
+	# skip_before_action :is_authenticated?, only: [:index, :adv_search, :adv_result, :show, :result]
 
   def index
   	
@@ -82,7 +82,39 @@ class DrinksController < ApplicationController
   end
 
   def result
+  	# if params[:srch_term] == nil
+  	# 	search_query = nil
+
+  	# elsif params[:srch_term].length > 1 
+  	# 	search_query = params[:srch_term].join("%2C")
+  	# elsif params[:srch_term].length == 1
+  	# 	search_query = params[:srch_term][0]
+  	# end
+
+  	# if search_query == nil
+  	# 	flash[:danger] = "Please enter at least one drink"
+  	# 	redirect_to "/drinks/search"
+  	# else
+	  	base_url = 'http://addb.absolutdrinks.com/quickSearch/drinks/' + params[:srch_term]
+	  	response = RestClient.get base_url, {
+	  		:params => {
+	  			:apiKey => ENV['ABSOLUT_KEY'],
+	  			:start => '0',
+	  			:pageSize => '500'
+	  		}
+	  	}
+	  	@drinks = JSON.parse(response)
+	  	render json: @drinks
+  	# end
   end
+
+
+
+  
+
+
+
+  #################
 
   def adv_result
 

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "/drinks/index" => "drinks#index"
   get "/drinks/adv" => "drinks#adv_search"
   post "/drinks/adv_result" => "drinks#adv_result"
+  post "/drinks/result" => "drinks#result"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
