@@ -99,6 +99,5 @@ class DrinksController < ApplicationController
   		}
   	}
   	@drinks = JSON.parse(response.body).first[1]
-  	# render json: @drinks
   end
 end
