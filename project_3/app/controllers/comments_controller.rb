@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   def create
   	# @content = params[:content]
   	# render text: @content
-  	@comments = Comment.new(comment_params)
+  	Comment.create comment_params
   	redirect_to favorites_path
   end
 
