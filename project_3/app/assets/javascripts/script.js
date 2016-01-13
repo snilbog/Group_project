@@ -15,6 +15,6 @@ $(document).ready(function() {
 			} else if (data) {
 				btn.closest('#deleteMe').remove();
 			}
-		})
+		});
 	});
 });
