@@ -1,8 +1,12 @@
 @import 'bootstrap';
 
+title {
+    float: center;
+}
+
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: url('http://previews.123rf.com/images/blinow61/blinow611102/blinow61110200029/8964945-Abstract-close-up-red-brick-wall-background--Stock-Photo.jpg') no-repeat center center fixed;
+    background: url('http://images4.alphacoders.com/202/202158.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -25,12 +29,12 @@ h6 {
 p {
     font-size: 1.25em;
     line-height: 1.6;
-    color: #000;
+    color: #fff;
 }
 
 hr {
     max-width: 400px;
-    border-color: #999999;
+    border-color: #ffffff;
 }
 
 .brand,
@@ -72,13 +76,13 @@ hr {
 .tagline-divider {
     margin: 15px auto 3px;
     max-width: 250px;
-    border-color: #999999;
+    border-color: #ffffff;
 }
 
 .box {
     margin-bottom: 20px;
     padding: 30px 15px;
-    background: #fff;
+    background: #ffffff;
     background: rgba(255,255,255,0.9);
 }
 
@@ -102,7 +106,7 @@ hr {
 
 footer {
     background: #fff;
-    background: rgba(255,255,255,0.9);
+    background: #ffffff;
 }
 
 footer p {
@@ -161,7 +165,7 @@ footer p {
     .navbar-default {
         border: none;
         background: #fff;
-        background: rgba(255,255,255,0.9);
+        background: #ffffff;
     }
 
     .nav>li>a {
@@ -188,5 +192,7 @@ footer p {
         clear: both;
     }
 }
+
+
 
 /**/
