@@ -1,12 +1,1 @@
-<h1><%= @current_user.name %>s' Favorites!</h1>
-
-
-<% @favorites.each do |fav| %>
-	<div id="deleteMe">
-		<h2> <%= fav.description %> </h2>
-		<h3> <%= fav.drink_id %> </h3>
-		<p> <%= fav.user_id %> </p>
-		<%= link_to 'Delete', fav, :class => 'js-delete-btn btn btn-danger', :data => {:request_type => 'html'} %>
-	</div>
-<% end%>
 
