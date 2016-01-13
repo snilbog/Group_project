@@ -7,8 +7,10 @@ class ApplicationController < ActionController::Base
 
   def is_authenticated?
     unless current_user
-      flash[:danger] = "Credentials Invalid!"
-      redirect_to login_path
+      # flash[:danger] = "Credentials Invalid!"
+      # 
+      # duplicate authentication: Don't need to redirect because public users do not have access to click  favorite link (because this link only shows if users are logged in)
+      # redirect_to login_path
     end
   end
 
