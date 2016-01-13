@@ -11,7 +11,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <link rel="icon" href="../../favicon.ico">
-
+​
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!-- Bootstrap core CSS -->
@@ -24,17 +24,17 @@
     <link href="application.scss" rel="stylesheet">
   </head>
   <title>DRINKMATE</title>
-
+​
   <h5>
  <% if @current_user %>
 	Signed in as <%= @current_user.email %> | <%= link_to "Logout", "/logout" %>
 	<% else %>
 	<%= link_to "Login", "/login" %> | <%= link_to "Signup", "/signup" %>
 <% end %>
-
+​
 <%= render "partials/flash" %>
-
-
+​
+​
 </h5>
 <body>
 <!-- navbar-->
@@ -90,4 +90,4 @@
    </nav>
    <%= yield %>
 </body>
-
+​</html>
