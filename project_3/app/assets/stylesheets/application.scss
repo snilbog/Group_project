@@ -36,17 +36,21 @@ hr {
     max-width: 400px;
     border-color: #ffffff;
 }
-
+#myCarousel > div > div > img  {
+    height: 600px !important;
+    width: 800px !important;
+    margin: 0 auto;
+}
 .brand,
 .address-bar {
     display: none;
+    color: black;
 }
 
 .navbar-brand {
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 2px;
-    color: black;
 }
 
 .navbar-nav {
@@ -147,7 +151,7 @@ footer p {
         font-size: 1.25em;
         font-weight: 400;
         letter-spacing: 3px;
-        color: #fff;
+        color: #ffffff;
     }
 
     .navbar {
@@ -164,7 +168,6 @@ footer p {
 
     .navbar-default {
         border: none;
-        background: #fff;
         background: #ffffff;
     }
 
@@ -182,10 +185,11 @@ footer p {
         margin: 0 auto;
         table-layout: fixed;
         font-size: 1.25em;
+        color: black;
     }
 }
 
-@media screen and (min-width:1200px) {
+@media screen and (min-width:800px) {
     .box:after {
         content: '';
         display: table;
