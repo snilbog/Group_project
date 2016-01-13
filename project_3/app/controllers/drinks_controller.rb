@@ -1,5 +1,7 @@
 class DrinksController < ApplicationController
 	before_action :is_authenticated?
+	#Don't have to be logged in to view drinks
+	skip_before_action :is_authenticated?, only: [:index, :adv_search, :adv_result, :show, :result]
 
   def index
   	
@@ -7,6 +9,7 @@ class DrinksController < ApplicationController
   end
 
   def adv_search
+
   	base_url = 'http://addb.absolutdrinks.com/ingredients/'
   	response = RestClient.get base_url, {
   		:params => {
