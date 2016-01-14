@@ -80,6 +80,8 @@ class DrinksController < ApplicationController
   end
 
   def show
+    @drinks = JSON.parse(response).first[1]
+
   end
 
   def result
