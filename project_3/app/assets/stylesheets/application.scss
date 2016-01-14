@@ -1,5 +1,8 @@
 @import 'bootstrap';
 
+body {
+    padding-top: 189px; /* match the height of global-header (height + padding + margin + border)*/
+}
 title {
     float: center;
 }
@@ -15,7 +18,6 @@ header#global-header {
     left: 0;
     text-align: center;
     padding: 0px 40px 0px 40px;
-    margin-bottom: 80px;
     position: fixed;
     padding: 5px;
     top: 0;
