@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   get "/favorites" => "favorites#index"
 
-
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   get '/logout' => 'sessions#destroy'
@@ -17,7 +16,7 @@ Rails.application.routes.draw do
   get "/drinks/index" => "drinks#index"
   get "/drinks/adv" => "drinks#adv_search"
   post "/drinks/adv_result" => "drinks#adv_result"
-
+  post "/drinks/result" => "drinks#result"
   root 'home#index'
   resources :favorites
 
