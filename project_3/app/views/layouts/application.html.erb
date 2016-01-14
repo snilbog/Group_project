@@ -73,7 +73,7 @@
                    </li>
                  
                      <div class="col-sm-3 col-md-3 pull-right">
-                        <%= form_tag("/drinks/result", method: "post") do %>
+                        <%= form_tag("/drinks/result", :id => "nav-search", method: "post") do %>
                         <input type="text" class="form-control" placeholder="Drink name" name="srch_term" id="srch-term">
                         <%= submit_tag("submit") %>
                     <% end %>
