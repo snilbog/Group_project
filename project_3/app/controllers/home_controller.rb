@@ -6,4 +6,16 @@ class HomeController < ApplicationController
 
   def index
   end
+
+  def tools
+  	base_url = 'http://addb.absolutdrinks.com/tools/'
+  	response = RestClient.get base_url, {
+  		:params => {
+  			:apiKey => ENV['ABSOLUT_KEY']
+  		}
+  	}
+  	@tools = JSON.parse(response)['result']
+  	@video_link = nil
+      
+  end
 end

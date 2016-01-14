@@ -82,7 +82,12 @@ class DrinksController < ApplicationController
   end
 
   def result
-	  	base_url = 'http://addb.absolutdrinks.com/quickSearch/drinks/' + params[:srch_term]
+    if params[:srch_term].blank?
+      flash[:warning] = "Please enter a drink"
+      redirect_to '/'
+    else
+  	base_url = 'http://addb.absolutdrinks.com/quickSearch/drinks/' + params[:srch_term]
+
 	  	response = RestClient.get base_url, {
 	  		:params => {
 	  			:apiKey => ENV['ABSOLUT_KEY'],
@@ -90,8 +95,14 @@ class DrinksController < ApplicationController
 	  			:pageSize => '500'
 	  		}
 	  	}
-	  	@drinks = JSON.parse(response).first[1]
-	  	# render json: @drinks
+      if response
+        @drinks = JSON.parse(response).first[1]
+      # render json: @drinks
+      else 
+        flash[:warning] = "No result found."
+        redirect_to '/'
+      end
+    end
   end
 
   def adv_result

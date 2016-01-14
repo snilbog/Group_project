@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   post "/drinks/adv_result" => "drinks#adv_result"
   post "/drinks/result" => "drinks#result"
 
+  get "/tools" => "home#tools"
+
   root 'home#index'
   resources :favorites
 
