@@ -1,8 +1,85 @@
-<h2> <%= @favorite.img %> </h2>
+<div class="row">
+<div class="container">
+    <h2><%= @drink.first['name'] %>
+    <p><% if @video_link %>
+        <a href="#" class="btn btn-default btn-sm" data-toggle="modal" data-target="#videoModal" data-theVideo="<%= @video_link %>">WATCH VIDEO</a>
+        <% end %></h2>
+    </p>
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body"> <h4>How to make <%= @drink.first['name'] %></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <div>
+                        <iframe width="100%" height="350" src="<%= @video_link %>"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<% @comments.each do |comm| %>
-	<div id="deleteMe comment">
-		<h2> <%= comm.content %> </h2>
-	</div>
-<% end %>
+    <img alt="Picture of drink" src="<%= @image_link %>">
+
+    <h4 class="details_title">Description</h4>
+    <h4><%= @drink.first['descriptionPlain'] %></h4>
+    <p>Taste(s) : 
+        <% @drink.first['tastes'].each do |t| %>
+        <%= t['text'] %> 
+        <% end %>
+    </p>
+
+    <p>Occasion(s) : 
+        <% @drink.first['occasions'].each do |t| %>
+        <%= t['text'] %> 
+        <% end %>
+    </p>
+
+    <p>Served in : <%= @drink.first['servedIn']['text'] %></p>
+
+    <p>Skill level : <%= @drink.first['skill']['name'] %></p>
+    
+    <% if @drink.first['isAlcoholic'] == false %>
+        <p> Non-alcoholic </p>
+    <% elsif @drink.first['isAlcoholic'] == true %>
+        <p> Alcoholic </p>
+    <% end %>
+
+    <% if @drink.first['isHot'] == false %>
+        <p> Cold </p>
+    <% elsif @drink.first['isHot'] == true %>
+        <p> Hot </p>
+    <% end %>
+
+    <% if @drink.first['isCarbonated'] == false %>
+        <p> Not carbonated </p>
+    <% elsif @drink.first['isCarbonated'] == true %>
+        <p> Carbonated </p>
+    <% end %>
+
+    <h4 class="details_title">Ingredients</h4>
+    <ul>
+        <% @drink.first['ingredients'].each do |i| %>
+        <li><h4><%= i['textPlain'] %></h4></li>
+        <% end %>
+    </ul>
+
+    <h4 class="details_title">Tools</h4>
+    <ul>
+        <% @drink.first['tools'].each do |i| %>
+        <li><h4><%= i['text'] %></h4></li>
+        <% end %>
+    </ul>
+    
+    <% if @comments %>
+    <h3>Comments</h3>
+    <% end %>
+    <% @comments.each do |comm| %>
+    	<div id="deleteMe comment">
+    		<h4> You: <%= comm.content %> </h4>
+    	</div>
+    <% end %>
+
+<button onclick="goBack()">Go Back</button>
+</div>
+</div>
 
