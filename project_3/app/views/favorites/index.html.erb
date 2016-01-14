@@ -1,13 +1,11 @@
 <body>
         <div class="row">
-<<<<<<< HEAD
             <div class="col-lg-12">
             	<br>
                 <hr>
                   <h1 class="text-center"><%= @current_user.name %>s' Favorites!</h1>
                 <hr>
-=======
-            <div class="box">
+        
                 <div class="col-lg-12">
                     <hr>
                     <h1 class="text-center"><%= @current_user.name %>s' Favorites!</h1>
@@ -21,30 +19,7 @@
                     <%= link_to 'Add Comment', new_comment_path(fav), :class => 'btn btn-warning add-comm-btn' %>      <hr>
                 </div>
                 <% end %>
-                <div class="col-lg-12 text-center">
-                    <ul class="pager">
-                        <li class="previous"><a href="#">&larr; Older</a>
-                        </li>
-                        <li class="next"><a href="#">Newer &rarr;</a>
-                        </li>
-                    </ul>
-                </div>
->>>>>>> 5105be3ab20c1b3fc63851a3efdd3652d080db7a
             </div>
-        </div>
-        <div class="row">
-        <% @favorites.each do |fav| %>
-            <div class="col-md-2">
-            </div>
-	            <div class="results_container col-md-8">
-	                <h3> <%= link_to fav.img, fav %> </h3>
-	                <p> <%= fav.description %></p>
-	                <%= link_to 'Delete', fav, :class => 'js-delete-btn btn btn-danger' %>
-	                <%= link_to 'Add Comment', new_comment_path(fav), :class => 'btn btn-warning add-comm-btn' %>      <hr>
-	            </div>
-        	<div class="col-md-2">
-			</div> 
-      	 <% end %>
         </div>
   
    
