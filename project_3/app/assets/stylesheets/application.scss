@@ -4,14 +4,22 @@ title {
     float: center;
 }
 
+.fav_color {
+color: blue;
+
+}
+.title_color {
+    color: #39F7F7 !important;
+}
+
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: url('http://images4.alphacoders.com/202/202158.jpg') no-repeat center center fixed;
+    background: url('http://citationgurus.com/wp-content/uploads/2014/11/backgrounds-background-hd-wallpaper-02-download-widescreen-high-resolution-wallpaper.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-
+    color: white !important;
 }
 
 h1,
@@ -20,16 +28,16 @@ h3,
 h4,
 h5,
 h6 {
-    text-transform: uppercase;
     font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
+    color: #ffffff !important;
 }
 
 p {
     font-size: 1.25em;
     line-height: 1.6;
-    color: #fff;
+    color: #ffffff;
 }
 
 hr {
@@ -195,6 +203,13 @@ footer p {
         display: table;
         clear: both;
     }
+}
+
+
+/* WELL STYLING */
+.results_container{
+    width: 600px;
+    float: level;
 }
 
 
