@@ -26,52 +26,34 @@
   </head>
 
 <title>DRINKMATE</title>
-​<!--  <div class="brand" style="font-family: Futura">DrinkMate</div> -->
 
-  <h5>
+<body>
+<header id="global-header" class="text'-center">
+<div class="container">
+
+    <h6>
  <% if @current_user %>
-	Signed in as <%= @current_user.email %> | <%= link_to "Logout", "/logout" %>
-	<% else %>
-	<%= link_to "Login", "/login" %> | <%= link_to "Signup", "/signup" %>
+  Signed in as <%= @current_user.email %> | <%= link_to "Logout", "/logout" %>
+  <% else %>
+  <%= link_to "Login", "/login" %> | <%= link_to "Signup", "/signup" %>
 <% end %>
 
 
 <%= render "partials/flash" %>
 ​
 ​
-</h5>
-<body>
-<div class="container">
-<!-- navbar-->
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-       <div class="container">
-           <!-- Brand and toggle get grouped for better mobile display -->
-           <div class="navbar-header">
-              
-               <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-           </div>
-           <!-- Collect the nav links, forms, and other content for toggling -->
-           <div class="navbar" id="bs-example-navbar-collapse-1">
-           <div class="brand; navbar-inner" style="font-family: Futura">DrinkMate</div>
-               <ul class="nav navbar-nav" style="font-size: 10px">
-                   <li>
-                       <a href="/drinks/index">Drinks</a>
-                  </li>
-                   <li>
-                       <a href="/">About</a>
-                   </li>
-                   <% if @current_user %>
-                    <li>
-                       <a href="/favorites">Favorites</a>
-                    </li>
-                    
-                    <% else %>
-                
-                   <% end %>
-                    <li>
-                       <a href="/drinks/adv">Advanced Search</a>
-                   </li>
-             <div class="col-sm-3 col-md-3 pull-right">
+</h6>
+  <a href="/" class="drink-mate-logo" style="display: inline;"><div class="brand" style="font-family: Futura; font-weight: Extra Bold">DrinkMate</div>
+  </a>
+  <nav class="navbar navbar" id="global-nav">
+  <a class="active" href="/drinks/index">Drinks</a> |
+  <a  href="/">About</a> |
+    <% if @current_user %>
+  <a href="/favorites">Favorites</a> |
+  <% else %>
+  <% end  %>
+  <a href="/drinks/adv">Advanced Search</a>
+   <div class="col-sm-6 col-md-3 pull-right">
         <form class="navbar-form" role="search">
         <div class="input-group">
         <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
@@ -81,15 +63,13 @@
       </div>
       </form>
       </div>
-      </div>
-      </ul>
-      </div>
-      
-           </div>
-           <!-- /.navbar-collapse -->
-       </div>
-       <!-- /.container -->
-   </nav>
+  </nav>
+
+  </div>
+  </header>
+
+
+
    <%= yield %>
 </body>
 ​</html>
