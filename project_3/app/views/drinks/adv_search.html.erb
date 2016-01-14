@@ -1,116 +1,161 @@
-<%= form_tag("/drinks/adv_result", method: "post") do %>
-	<div class="container-fluid" style='height: 500px;'>
-		<h3>Spirits:</h3>
-		<% @spirits.each do |s| %>
-		<ul style='display: inline-block;'>
-			<li class='col-md-6' type="checkbox"> <%= check_box_tag('s[]', s) %></li>
-			<%= label_tag(:s, s) %>
-		</ul>
-		<% end %>
-	</div>
+<h3 class="col-md-10 col-md-offset-1">Here on the advanced search page, you can enter what ingredients you have and find out what fun recipes you can make. Start by using the dropdown menus to select what alcohols/mixers you have.</h3>
 
-	<h3>Mixers:</h3>
-	<% @mixers.each do |s| %>
-	<ul>
-		<li type="checkbox"> <%= check_box_tag('s[]', s) %></li>
-	<%= label_tag(:s, s) %>
-	</ul>
+<div class="container-fluid">
+	<%= form_tag("/drinks/adv_result", method: "post") do %>
+		<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Spirits
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @spirits.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>	
+
+		<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Mixers
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @mixers.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Vodka
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @vodka.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Rum
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @rum.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Brandy
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @brandy.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Whiskey
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @whisky.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Gin
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @gin.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tequila
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @tequila.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>
+		
+		<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Spices & Herbs
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @spices_herbs.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>
+		
+		<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Fruits
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @fruits.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Berries
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @berries.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ice
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @ice.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Decorations
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @decoration.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Others
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @others.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>
+
+		<%= submit_tag("submit") %>
 	<% end %>
-
-	<h3>Vodka:</h3>
-	<% @vodka.each do |s| %>
-	<ul>
-		<li type="checkbox"> <%= check_box_tag('s[]', s) %></li>
-	<%= label_tag(:s, s) %>
-	</ul>
-	<% end %>
-
-	<h3>Rum:</h3>
-	<% @rum.each do |s| %>
-	<ul>
-		<li type="checkbox"> <%= check_box_tag('s[]', s) %></li>
-	<%= label_tag(:s, s) %>
-	</ul>
-	<% end %>
-
-	<h3>Brandy:</h3>
-	<% @brandy.each do |s| %>
-	<ul>
-		<li type="checkbox"> <%= check_box_tag('s[]', s) %></li>
-	<%= label_tag(:s, s) %>
-	</ul>
-	<% end %>
-
-	<h3>Whisky:</h3>
-	<% @whisky.each do |s| %>
-	<ul>
-		<li type="checkbox"> <%= check_box_tag('s[]', s) %></li>
-	<%= label_tag(:s, s) %>
-	</ul>
-	<% end %>
-
-	<h3>Gin:</h3>
-	<% @gin.each do |s| %>
-	<ul>
-		<li type="checkbox"> <%= check_box_tag('s[]', s) %></li>
-	<%= label_tag(:s, s) %>
-	</ul>
-	<% end %>
-
-	<h3>Tequila:</h3>
-	<% @tequila.each do |s| %>
-	<ul>
-		<li type="checkbox"> <%= check_box_tag('s[]', s) %></li>
-	<%= label_tag(:s, s) %>
-	</ul>
-	<% end %>
-
-
-	<h3>Spices-herbs:</h3>
-	<% @spices_herbs.each do |s| %>
-	<%= check_box_tag('genre', s) %>
-	<%= label_tag(:s, s) %>
-	<% end %>
-
-	<h3>Fruits:</h3>
-	<% @fruits.each do |s| %>
-	<ul>
-		<li type="checkbox"> <%= check_box_tag('s[]', s) %></li>
-	<%= label_tag(:s, s) %>
-	</ul>
-	<% end %>
-
-	<h3>Berries:</h3>
-	<% @berries.each do |s| %>
-	<ul>
-		<li type="checkbox"> <%= check_box_tag('s[]', s) %></li>
-	<%= label_tag(:s, s) %>
-	</ul>
-	<% end %>
-
-	<h3>Ice:</h3>
-	<% @ice.each do |s| %>
-	<ul>
-		<li type="checkbox"> <%= check_box_tag('s[]', s) %></li>
-	<%= label_tag(:s, s) %>
-	</ul>
-	<% end %>
-
-	<h3>Decoration:</h3>
-	<% @decoration.each do |s| %>
-	<ul>
-		<li type="checkbox"> <%= check_box_tag('s[]', s) %></li>
-	<%= label_tag(:s, s) %>
-	</ul>
-	<% end %>
-
-	<h3>Others:</h3>
-	<% @others.each do |s| %>
-	<ul>
-		<li type="checkbox"> <%= check_box_tag('s[]', s) %></li>
-	<%= label_tag(:s, s) %>
-	</ul>
-	<% end %>
-
-	<%= submit_tag("submit") %>
-<% end %>
+</div>
