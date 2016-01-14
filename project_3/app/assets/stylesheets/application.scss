@@ -9,12 +9,16 @@ header#global-header {
     left: 0;
     text-align: center;
     padding: 0px 40px 0px 40px;
-    margin-bottom: 120px;
+    margin-bottom: 80px;
     position: fixed;
     padding: 5px;
     top: 0;
     width: 100%;
     z-index: 105;
+}
+div.container {
+height: 145px;
+    
 }
 div.box {
     postion: relative
@@ -25,18 +29,19 @@ h6 {
     position: relative;
     
 }
-nav#global-nav {
+nav#global-nav.navbar {
  text-align: center;
-padding-left: 200px;
+padding-left: 285px;
 margin: 1px;
  font-weight:light;
  font-family: Futura;
   border: solid gray1px;
   border-color: #gray;
-  width: 1100px;
+  height: 30px;
+  width: 1000px;
   text-transform: uppercase;
 }
-nav#global-nav a {
+nav#global-nav.navbar > a{
  color: #gray;
 }
 
@@ -45,7 +50,9 @@ color: gray;
 
 }
 form.navbar-form {
-   display: inline
+   display: inline;
+   height: 43px;
+   border-radius: none;
 }
 .title_color {
     color: #39F7F7 !important;
@@ -102,6 +109,8 @@ font-weight: bold;
 input#srch-term {
     background-color: #black
 }
+
+
 
 .navbar-nav {
     text-transform: uppercase;
