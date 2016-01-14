@@ -11,7 +11,6 @@ title {
 }
 .title {
     width: 400px !important;
-    background-color: yellow !important;
 }
 header#global-header {
     background: #000000;
@@ -56,9 +55,8 @@ nav#global-nav.navbar > a{
 .fav_color {
 color: black;
 }
-.rating_color {
-    color: #E2FACD;
-    color: gray;
+.small.rating_color {
+    color: #F2A0A5 !important;
 }
 form.navbar-form {
    display: inline;
