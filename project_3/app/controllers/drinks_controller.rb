@@ -5,8 +5,6 @@ class DrinksController < ApplicationController
 	# skip_before_action :is_authenticated?, only: [:index, :adv_search]
 
   def index
-  	
-
   end
 
   def adv_search
@@ -80,22 +78,10 @@ class DrinksController < ApplicationController
   end
 
   def show
+    @drinks = JSON.parse(response).first[1]
   end
 
   def result
-  	# if params[:srch_term] == nil
-  	# 	search_query = nil
-
-  	# elsif params[:srch_term].length > 1 
-  	# 	search_query = params[:srch_term].join("%2C")
-  	# elsif params[:srch_term].length == 1
-  	# 	search_query = params[:srch_term][0]
-  	# end
-
-  	# if search_query == nil
-  	# 	flash[:danger] = "Please enter at least one drink"
-  	# 	redirect_to "/drinks/search"
-  	# else
 	  	base_url = 'http://addb.absolutdrinks.com/quickSearch/drinks/' + params[:srch_term]
 	  	response = RestClient.get base_url, {
 	  		:params => {
@@ -104,24 +90,29 @@ class DrinksController < ApplicationController
 	  			:pageSize => '500'
 	  		}
 	  	}
-	  	@drinks = JSON.parse(response)
-	  	render json: @drinks
-  	# end
+	  	@drinks = JSON.parse(response).first[1]
+	  	# render json: @drinks
   end
-
-
-
-  
-
-
-
-  #################
 
   def adv_result
 
-  	# checked checkboxes (with same name) are passed automatically as an array 
-  	# concat the array with join to match the api search url
-  	search_term = params[:s].join("/and/")
+  	# if no checkedboxes are checked, redirect to advance search page with flash message
+    if params[:s] == nil
+      search_term = nil
+
+    # multiple checkboxes, join the array element ==> element1/and/element2/and/element3 to match the API call
+    elsif params[:s].length > 1
+      search_term = params[:s].join("/and/")
+
+    # only one checked, don't join the array
+    elsif params[:s].length == 1
+      search_term = params[:s][0]
+    end
+
+    if search_term == nil
+      flash[:danger] = "Please choose at least one ingredients"
+      redirect_to "/drinks/adv"
+    else
   	base_url = 'http://addb.absolutdrinks.com/drinks/with/' + search_term
   	response = RestClient.get base_url, {
   		:params => {
@@ -131,5 +122,7 @@ class DrinksController < ApplicationController
   		}
   	}
   	@drinks = JSON.parse(response.body).first[1]
+    end
+  	# render json: @drinks
   end
 end
