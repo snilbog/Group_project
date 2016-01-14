@@ -3,10 +3,15 @@
 title {
     float: center;
 }
+.ing_color {
+    color: #E5CDFA !important;
+}
 
 .fav_color {
-color: blue;
-
+color: black;
+}
+.rating_color {
+    color: #E2FACD;
 }
 .title_color {
     color: #39F7F7 !important;
@@ -34,10 +39,18 @@ h6 {
     color: #ffffff !important;
 }
 
+.copy_tag {
+    font-size: 1.25em;
+    line-height: 1.6;
+    color: red;
+    text-align: center;
+}
+
 p {
     font-size: 1.25em;
     line-height: 1.6;
-    color: #ffffff;
+    color: white;
+    text-align: center;
 }
 
 hr {
@@ -122,8 +135,10 @@ footer {
 }
 
 footer p {
+    text-align: center;
     margin: 0;
-    padding: 50px 0;
+    padding: 100px 0;
+    color: #39F7F7;
 }
 
 @media screen and (min-width:768px) {
