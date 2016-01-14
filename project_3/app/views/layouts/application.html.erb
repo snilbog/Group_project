@@ -42,7 +42,7 @@
 </h5>
 <body>
 <!-- navbar-->
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation">
        <div class="container">
            <!-- Brand and toggle get grouped for better mobile display -->
            <div class="navbar-header">
@@ -68,15 +68,13 @@
                     <li>
                        <a href="/favorites">Favorites</a>
                     </li>
-                    
                     <% else %>
-                
                    <% end %>
                     <li>
                        <a href="/drinks/adv">Advanced Search</a>
-                   </li>
-                  <div class="col-sm-3 col-md-3 pull-right">
-                      <%= form_tag("/drinks/result", method: "post") do %>
+                   </li>   
+                     <div class="col-sm-3 col-md-3 pull-right">
+                        <%= form_tag("/drinks/result", :id => "nav-search", method: "post") do %>
                         <input type="text" class="form-control" placeholder="Drink name" name="srch_term" id="srch-term">
                         <%= submit_tag("submit") %>
                     <% end %>
