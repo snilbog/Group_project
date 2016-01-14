@@ -28,21 +28,20 @@
 <title>DRINKMATE</title>
 ​<!--  <div class="brand" style="font-family: Futura">DrinkMate</div> -->
 
+  <h5>
+ <% if @current_user %>
+	Signed in as <%= @current_user.email %> | <%= link_to "Logout", "/logout" %>
+	<% else %>
+	<%= link_to "Login", "/login" %> | <%= link_to "Signup", "/signup" %>
+<% end %>
 
+
+<%= render "partials/flash" %>
 ​
 ​
 </h5>
 <body>
 <div class="container">
-  <h5>
- <% if @current_user %>
-  Signed in as <%= @current_user.email %> | <%= link_to "Logout", "/logout" %>
-  <% else %>
-  <%= link_to "Login", "/login" %> | <%= link_to "Signup", "/signup" %>
-<% end %>
-
-
-<%= render "partials/flash" %>
 <!-- navbar-->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
        <div class="container">
