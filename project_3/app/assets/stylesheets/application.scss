@@ -1,15 +1,23 @@
 @import 'bootstrap';
 
+body {
+    padding-top: 189px; /* match the height of global-header (height + padding + margin + border)*/
+}
 title {
     float: center;
 }
-
+.ing_color {
+    color: #E5CDFA !important;
+}
+.title {
+    width: 400px !important;
+    background-color: yellow !important;
+}
 header#global-header {
     background: #000000;
     left: 0;
     text-align: center;
     padding: 0px 40px 0px 40px;
-    margin-bottom: 80px;
     position: fixed;
     padding: 5px;
     top: 0;
@@ -46,8 +54,11 @@ nav#global-nav.navbar > a{
 }
 
 .fav_color {
-color: gray;
-
+color: black;
+}
+.rating_color {
+    color: #E2FACD;
+    color: gray;
 }
 form.navbar-form {
    display: inline;
@@ -80,10 +91,18 @@ h6 {
     color: #ffffff !important;
 }
 
+.copy_tag {
+    font-size: 1.25em;
+    line-height: 1.6;
+    color: red;
+    text-align: center;
+}
+
 p {
     font-size: 1.25em;
     line-height: 1.6;
-    color: #ffffff;
+    color: white;
+    text-align: center;
 }
 
 hr {
@@ -175,8 +194,10 @@ footer {
 }
 
 footer p {
+    text-align: center;
     margin: 0;
-    padding: 50px 0;
+    padding: 100px 0;
+    color: #39F7F7;
 }
 
 @media screen and (min-width:768px) {
@@ -258,13 +279,15 @@ footer p {
     }
 }
 
+.details_title {
+    text-decoration: underline;
+    padding: 10px;
+}
 
 /* WELL STYLING */
 .results_container{
     width: 600px;
     float: level;
 }
-
-
 
 /**/

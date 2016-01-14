@@ -1,31 +1,37 @@
-<div class="row">
-<div class="col-md-2">
-</div>
-<div class="results_container col-md-8">
 
-<% @drinks.each do |res| %>
-	<div>
-		<h2 class="title_color"><%= res['name']%><small> Rating: <%= res['rating'] %></small></h2>
-		<h3> Ingredients: </h3>
-		<ul>
-			<% res['ingredients'].each do |el| %>
-			<li><%= el['textPlain'] %></li>
-			<% end %>
-		</ul>
-		<h3> Directions: <%= res['descriptionPlain'] %> </h3>
+	<div class="row">
+        <hr>
+            <h1 class="text-center"><%= @current_user.name %>s' Results!</h1>
+        <hr>
+    </div>
+
+<div class="row">
+	<div class="col-md-2 title">
 	</div>
-	<div class="results">
-	<%= bootstrap_form_for :favorites, url: '/favorites' do |f| %>
-		<%= f.hidden_field :drink_id, :value => res['id']  %>
-		<%= f.hidden_field :description, :value => res['descriptionPlain']  %>
-		<%= f.hidden_field :img, :value => res['name']  %>
-	    <%= f.hidden_field :user_id, :value => @current_user.id %>
-	    <%= f.submit "Add To Favorites!", :class => "fav_color" %>
-	    <hr/>
-	<% end %>
+		<div class="results_container col-md-8">
+			<% @drinks.each do |res| %>
+				<div>
+					<h2 class="title_color"><%= res['name']%><small class= "rating_color"> Rating: <%= res['rating'] %></small></h2>
+						<h3 class="ing_color"> Ingredients: </h3>
+							<ul>
+								<% res['ingredients'].each do |el| %>
+									<li><%= el['textPlain'] %></li>
+								<% end %>
+							</ul>
+						<h3> Directions: <%= res['descriptionPlain'] %> </h3>
+				</div>
+			<div class="results">
+				<%= bootstrap_form_for :favorites, url: '/favorites' do |f| %>
+				<%= f.hidden_field :drink_id, :value => res['id']  %>
+				<%= f.hidden_field :description, :value => res['descriptionPlain']  %>
+				<%= f.hidden_field :img, :value => res['name']  %>
+				<%= f.hidden_field :user_id, :value => @current_user.id %>
+				<%= f.submit "Add To Favorites!", :class => "fav_color" %>
+				<hr/>
+				<% end %>
+			</div>
+				<% end %>
+		</div>
+	<div class="col-md-2 title">
 	</div>
-<% end %>
-</div>
-<div class="col-md-2">
-</div>
 </div>

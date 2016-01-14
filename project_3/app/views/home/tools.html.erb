@@ -1,0 +1,14 @@
+<% @tools.each do |tool| %>
+	<h2><%= tool['name'] %></h2>
+	<% tool['videos'].each do |v| %>
+		<% @video = v['video'] %>
+
+		<video width="320" height="240" controls>
+		<source src="http://assets.absolutdrinks.com/videos/<%= @video %>" type="video/mp4">
+		</video>Your browser does not support the video tag.
+
+	<% end %>
+
+	<p><%= tool['description'] %></p>
+
+<% end %>
