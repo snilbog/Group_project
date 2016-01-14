@@ -6,7 +6,10 @@ title {
 .ing_color {
     color: #E5CDFA !important;
 }
-
+.title {
+    width: 400px !important;
+    background-color: yellow !important;
+}
 header#global-header {
     background: #000000;
     left: 0;
@@ -49,15 +52,11 @@ nav#global-nav.navbar > a{
 }
 
 .fav_color {
-<<<<<<< HEAD
 color: black;
 }
 .rating_color {
     color: #E2FACD;
-=======
-color: gray;
-
->>>>>>> 2c892b690864fe344b7cb4a53c7f63e28fc6bc5e
+    color: gray;
 }
 form.navbar-form {
    display: inline;

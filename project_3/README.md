@@ -50,6 +50,8 @@ Bootstrap for frontend styling and responsiveness
 ***********
 A couple paragraphs about the general approach you took:
 
+First we wanted to figure out an app that we all wanted to create and could identify with. Then we assigned roles, which were flexible and changed throughout the project. Then we figured out what our app could do and what was realistic in the timeframe. 
+
 
 
 ****************
