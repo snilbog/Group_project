@@ -19,18 +19,29 @@ class FavoritesController < ApplicationController
         :pageSize => '500'
       }
     }
-    @drink = JSON.parse(response.body).first[1]
-    # render json: @drink
+    @drink = JSON.parse(response)['result']
+    @video_link = nil
+      if @drink.first['videos'].first['video']
+        @video_id = @drink.first['videos'].first['video']
+        @video_link = "http://www.youtube.com/embed/" + @video_id
+        # render text: @video_link
+      else 
+      end
+
+    @image_link = "http://assets.absolutdrinks.com/drinks/transparent-background-white/soft-shadow/300x400/" + @drink.first['id'] + ".png"
+    # render text: @image_link
   end
 
   def create
-    posted = Favorite.find_or_create_by(drink_id: post_params[:drink_id], user_id: post_params[:user_id])
-    if posted.save
-      posted.img = post_params[:img]
-    	posted.description = post_params[:description]
-    end
-    
-    # Favorite.create post_params
+
+    # to avoid adding the same drink more than once
+    # posted = Favorite.find_or_create_by(drink_id: post_params[:drink_id], user_id: post_params[:user_id])
+    # if posted.save
+    # 	posted.description = "hello"
+    #   posted.img = post_params[:img]
+    # end
+
+    Favorite.create post_params
     redirect_to favorites_path
   end
 
