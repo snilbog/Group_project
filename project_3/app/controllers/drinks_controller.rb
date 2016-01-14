@@ -5,8 +5,6 @@ class DrinksController < ApplicationController
 	# skip_before_action :is_authenticated?, only: [:index, :adv_search]
 
   def index
-  	
-
   end
 
   def adv_search
@@ -81,7 +79,6 @@ class DrinksController < ApplicationController
 
   def show
     @drinks = JSON.parse(response).first[1]
-
   end
 
   def result
@@ -90,6 +87,7 @@ class DrinksController < ApplicationController
       redirect_to '/'
     else
   	base_url = 'http://addb.absolutdrinks.com/quickSearch/drinks/' + params[:srch_term]
+
 	  	response = RestClient.get base_url, {
 	  		:params => {
 	  			:apiKey => ENV['ABSOLUT_KEY'],
@@ -138,5 +136,4 @@ class DrinksController < ApplicationController
     end
   	# render json: @drinks
   end
-
 end
