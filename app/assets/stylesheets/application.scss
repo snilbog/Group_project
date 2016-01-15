@@ -27,7 +27,8 @@ header#global-header {
     z-index: 105;
 }
 div.container {
-height: 145px;
+height: 100px;
+padding: 0px;
     
 }
 div.box {
@@ -127,7 +128,9 @@ font-weight: bold;
     
 }
 input#srch-term {
-    background-color: #black
+    background-color: black;
+    background-color: black;
+
 }
 
 
@@ -282,6 +285,7 @@ footer p {
 
 .modal-content {
     color: black;
+    display: block;
 }
 
 .details_title {

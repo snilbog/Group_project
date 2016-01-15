@@ -51,6 +51,38 @@
       
     </div>
   </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          
+<h1>Signup</h1>
+
+<%= form_for :user, url: '/users' do |f| %>
+
+  Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  <%= f.submit "Submit" %>
+
+<% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
 <header id="global-header" class="text'-center">
 <div class="container">
 
@@ -58,7 +90,7 @@
  <% if @current_user %>
   Signed in as <%= @current_user.email %> | <%= link_to "Logout", "/logout" %>
   <% else %>
-  <a href="#" data-toggle="modal" data-target="#myModal">Login</a> | <%= link_to "Signup", "/signup" %>
+  <a href="#" data-toggle="modal" data-target="#myModal">Login</a> | <a href="#" data-toggle="modal" data-target="#myModal2">Signup</a> 
 <% end %>
 
 
@@ -67,7 +99,7 @@
 
 </h6>
 
-  <a href="/" class="drink-mate-logo" style="display: inline;"><div class="brand" style="font-family: Futura; font-weight">DrinkMate</div>
+  <a href="/" class="drink-mate-logo" style="display: inline;"><div class="brand" style="font-family: Futura; font-weight">Drink<span class="glyphicon glyphicon-glass"></span>Mate</div>
   </a>
   <nav class="navbar navbar" id="global-nav" style="height: 40px">
   <a class="active" href="/drinks/index">Drinks</a> |
