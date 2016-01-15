@@ -13,13 +13,19 @@ First we wanted to figure out an app that we all wanted to create and could iden
 We set up the github repo, then created a rails app. Backend was then set up, followed by routes, and styling. As problems arose we all would offer info on how to fix the issue. Then the web app and design and features changed and evolved as the project went on.
 
 
+***************  ENV FILE INSTRUCTIONS ***************
+go to http://addb.absolutdrinks.com/docs/ and apply for an api key
+create a .env file in the root directory of the app
+api keys must be labeled as ......
+ABSOLUT_KEY=your-key-goes-here
+ABSOLUT_SECRET=secret-key-goes-here
 
 ****************
 Installation instructions for any dependencies:
 
 ruby version: 2.2.2
 
-bundle
+bundle install
 rake db:create
 rake db:migrate
 
