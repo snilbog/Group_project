@@ -1,25 +1,24 @@
-        <div class="row">
-                <div class="col-lg-12">
-                    <hr>
-                    <h1 class="text-center"><%= @current_user.name %>s' Favorites!</h1>
-                    <hr>
-                </div>
-                <% @favorites.each do |fav| %>
-                <div class="col-lg-12 text-center">
-                    <h3> <%= link_to fav.img, fav %> </h3>
-                    <p> <%= fav.description %></p>
-                    <% @comments.each do |com| %>
-                        <% if com.drink_id.to_s == fav.id.to_s %>
-                            <p><%= com.content %></p>
-                        <% end %>
-                    <% end %>
-                    <%= link_to 'Delete', fav, :class => 'js-delete-btn btn btn-danger' %>
-                    <%= link_to 'Add Comment', new_comment_path(fav), :class => 'btn btn-warning add-comm-btn' %>      <hr>
-                </div>
-                <% end %>
-            </div>
-        </div>
-  
-  <div class="container"> 
-    <p class="copy_tag">Copyright &copy; DRINKMATE</p>  
-    </div>
+<div class="row">
+  <div class="col-lg-12">
+    <hr>
+      <h1 class="text-center"><%= @current_user.name %>s' Favorites!</h1>
+    <hr>
+</div>
+  <% @favorites.each do |fav| %>
+<div class="col-lg-12 text-center">
+  <h3 class="title_color"> <%= link_to fav.img, fav %> </h3>
+    <p> <%= fav.description %></p>
+        <% @comments.each do |com| %>
+        <% if com.drink_id.to_s == fav.id.to_s %>
+      <p><%= com.content %></p>
+        <% end %>
+        <% end %>
+        <%= link_to 'Delete', fav, :class => 'js-delete-btn btn btn-danger' %>
+        <%= link_to 'Add Comment', new_comment_path(fav), :class => 'btn btn-warning add-comm-btn' %>      <hr>
+</div>
+  <% end %>
+  </div>
+
+<div class="container"> 
+  <p class="copy_tag">Copyright &copy; DRINKMATE</p>  
+</div>
