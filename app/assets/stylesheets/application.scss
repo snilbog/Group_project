@@ -2,11 +2,15 @@
 
 
 body {
-    padding-top: 189px; /* match the height of global-header (height + padding + margin + border)*/
+    padding-top: 140px; /* match the height of global-header (height + padding + margin + border)*/
 }
 
 title {
     float: center;
+}
+.h1, h1 {
+    font-size: 36px;
+    color: black;
 }
 .ing_color {
     color: #E5CDFA !important;
@@ -33,11 +37,25 @@ header#global-header {
     z-index: 105;
 }
 div.container {
-height: 100px;
+height: 80px;
 padding: 0px;
 margin: 0px;
-
+}
+div.indexcontainer {
+    background-color: #262626;
+    border: 1px solid black;
+    color: #black;
+    width: 100%;
     
+}
+div.panel-body > p {
+    color: black;
+}
+div.panel-heading > h4 {
+    color: black;
+}
+div.panel-heading {
+    background-color: #262626;
 }
 div.box {
     postion: relative
@@ -77,6 +95,9 @@ form.navbar-form {
    display: inline;
    height: 43px;
    border-radius: none;
+   margin-right: -110px;
+   background-color: #00000 !important;
+
 }
 .title_color {
     color: #39F7F7 !important;
@@ -123,9 +144,12 @@ hr {
     border-color: #ffffff;
 }
 #myCarousel > div > div > img  {
-    height: 600px !important;
-    width: 800px !important;
+    height: 570px !important;
+    width: 1100px !important;
     margin: 0 auto;
+}
+a.left.carousel-control {
+    
 }
 .brand,
 .address-bar {
@@ -298,6 +322,9 @@ footer p {
 .modal-content {
     color: black;
     display: block;
+}
+.modal-body {
+    display: inline;
 }
 
 .details_title {
