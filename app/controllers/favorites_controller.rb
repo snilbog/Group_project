@@ -57,7 +57,7 @@ class FavoritesController < ApplicationController
   private
 
   def post_params
-      params.require(:favorites).permit(:drink_id, :description, :img)
+      params.require(:favorites).permit(:drink_id, :description, :img, :user_id)
   end
 
 end
