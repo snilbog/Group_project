@@ -17,11 +17,13 @@ $brand-color5: #FEF380;
 $brand-color6: #000000;
 $brand-color7: #FFFFFF;
 $brand-color8: #6B717F;
+$brand-color9: #1F1F1F;
 
 /* Generated color scheme for usage across website from above color scheme
 * Common names. Do not change them
 */
 $website-title: $brand-color7;
+$navbar-background: $brand-color9;
 $color-shadow: $brand-color6;
 $color-primary: $brand-color7;
 $color-accent: $brand-color8;
@@ -52,7 +54,7 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    color: $color-text !important;
+    color: white !important;
     /* match the height of global-header (height + padding + margin + border)*/
     padding-top: 140px; /* match the height of global-header (height + padding + margin + border)*/
 }
@@ -70,7 +72,7 @@ title {
 }
 .navbar-custom {
     color: #FFFFFF;
-    background-color: #CC3333;
+    background-color: $navbar-background !important;
 }
 .dir_color {
     color: #CBF09C !important;
@@ -272,6 +274,16 @@ input#srch-term {
     color: $color-text-heading;
 }
 
+.drink-name {
+    text-align: center;
+    color: $color-text;
+    size: 30px;
+}
+
+.drink-name :link, :visited, :hover {
+    color: $color-text-link !important;
+}
+
 .fav-list-box {
     margin: 0;
     text-align: center;
@@ -285,9 +297,6 @@ input#srch-term {
     text-decoration: none;
 }
 
-.fav-list-box.drink-name > a:link {
-    color: $color-text-strong;
-}
 
 /* Search results pages */
 .modal-content {

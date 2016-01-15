@@ -117,27 +117,26 @@
 <li><a href="/drinks/adv">Advanced Search</a></li>
 <li><a href="/tools">Tools</a></li>
 
-<!--Search bar for one item -->
-<form class="navbar-form navbar-right"  role="search">
-  <div class="input-group" style="border-radius: none">
-      <%= bootstrap_form_tag method: :post, url: '/drinks/result', class:"navbar-form" do |f| %>
+<%= bootstrap_form_tag url: drinks_result_path, class:"navbar-form" do |f| %>
+        <!-- <div class="input-group" style="border-radius: none"> -->
         <div class="input-group">
         <%= f.text_field :srch_term, hide_label: true, placeholder: "Enter a drink" %>
-      <span class="input-group-btn">
-        <button type="reset" class="btn btn-default">
-          <span class="glyphicon glyphicon-remove">
-          <span class="sr-only">Close</span>
-        </span>
-        </button>
-        <button type="submit" class="btn btn-default">
-        <span class="glyphicon glyphicon-search">
-        <span class="sr-only">Search</span>
-        </span>
-      </button>
-    </span>
-  </div>
-</form>
-    <% end %>
+            <span class="input-group-btn">
+              <button type="reset" class="btn btn-default">
+                <span class="glyphicon glyphicon-remove">
+                  <span class="sr-only">Close</span>
+                </span>
+              </button>
+              <button class="btn btn-default">
+              <%= f.submit '', :style => "display:none;" %>
+                <span class="glyphicon glyphicon-search">
+                  <span class="sr-only">Search</span>
+                </span>
+              </button>
+            </span>
+          </div>
+        <% end %>
+        <!-- </form> -->
       </div>
     </div>
   </div>
