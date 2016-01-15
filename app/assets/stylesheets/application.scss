@@ -1,13 +1,62 @@
 
 
 
+/* Color scheme created from one of carousel images 
+* Custom theme: https://color.adobe.com/library/7018299d-d425-4e15-afb5-fc16fb7a5dea/theme/4ece2645-96d9-40a2-8e0f-3f962f68aa54/
+* Modify colors here if you need to
+*/
+$brand-color1: #440002;
+$brand-color2: #241327;
+$brand-color3: #52393E;
+$brand-color4: #D7B892;
+$brand-color5: #FEF380;
+$brand-color6: #000000;
+$brand-color7: #FFFFFF;
+$brand-color8: #6B717F;
+
+/* Generated color scheme for usage across website from above color scheme
+* Common names. Do not change them
+*/
+$website-title: $brand-color7;
+$color-shadow: $brand-color6;
+$color-primary: $brand-color7;
+$color-accent: $brand-color8;
+$color-background: $brand-color4;
+$color-background-shade:$brand-color6;
+$color-background-invert:$brand-color3;
+$color-text: $brand-color3;
+$color-text-weak:$brand-color6;
+$color-text-strong: $brand-color1;
+$color-text-heading:$brand-color1;
+$color-text-invert:$brand-color4;
+$color-text-strong-invert:$brand-color2;
+$color-text-link:$brand-color1;
+$color-text-link-visited:$brand-color1;
+$color-text-link-hover:$brand-color3;
+$color-text-link-invert:$brand-color2;
+$color-text-link-visited-invert:$brand-color2;
+$color-text-link-hover-invert: $brand-color5;
+$color-border:$brand-color6;
+$color-button-background: $brand-color4;
+$color-button-text: $brand-color3;
+
 body {
+    text-align: center;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: url('http://citationgurus.com/wp-content/uploads/2014/11/backgrounds-background-hd-wallpaper-02-download-widescreen-high-resolution-wallpaper.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    color: $color-text !important;
+    /* match the height of global-header (height + padding + margin + border)*/
     padding-top: 140px; /* match the height of global-header (height + padding + margin + border)*/
 }
 
 title {
     float: center;
 }
+
 .h1, h1 {
     font-size: 36px;
     color: black;
@@ -25,6 +74,7 @@ title {
 .title {
     width: 400px !important;
 }
+
 header#global-header {
     background: #000000;
     left: 0;
@@ -36,10 +86,19 @@ header#global-header {
     width: 100%;
     z-index: 105;
 }
+
 div.container {
-height: 80px;
-padding: 0px;
-margin: 0px;
+    height: 100px;
+    padding: 0px;
+    margin: 0px;   
+}
+
+.nav > li {
+    font-size: 10px;
+    padding-left: 10px;
+    height: 80px;
+    padding: 0px;
+    margin: 0px;
 }
 div.indexcontainer {
     background-color: #262626;
@@ -69,67 +128,37 @@ h6 {
     position: relative;
     
 }
+
 nav#global-nav.navbar {
- text-align: center;
-padding-left: 285px;
-margin: 1px;
- font-weight:light;
- font-family: Futura;
-  border: solid gray1px;
-  border-color: #gray;
-  height: 30px;
-  width: 1000px;
-  text-transform: uppercase;
+    text-align: center;
+    padding-left: 285px;
+    margin: 1px;
+    font-weight:light;
+    font-family: Futura;
+    border: solid gray 1px;
+    border-color: #gray;
+    height: 30px;
+    width: 1000px;
+    text-transform: uppercase;
 }
+
 nav#global-nav.navbar > a{
  color: #gray;
 }
 
-.fav_color {
-color: black;
-}
-.rating_color {
-    color: #F2A0A5 !important;
-}
 form.navbar-form {
    display: inline;
    height: 43px;
    border-radius: none;
    margin-right: -110px;
    background-color: #00000 !important;
-
-}
-.title_color {
-    color: #39F7F7 !important;
 }
 
-body {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: url('http://citationgurus.com/wp-content/uploads/2014/11/backgrounds-background-hd-wallpaper-02-download-widescreen-high-resolution-wallpaper.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    color: white !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #ffffff !important;
-}
-
-.copy_tag {
-    font-size: 1.25em;
-    line-height: 1.6;
-    color: red;
-    text-align: center;
+.navbar-nav {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 3px;
+    height: 10px;
 }
 
 p {
@@ -141,103 +170,32 @@ p {
 
 hr {
     max-width: 400px;
-    border-color: #ffffff;
+    border-color: $color-border;
 }
+
+/* Carousel on the index page */
 #myCarousel > div > div > img  {
     height: 570px !important;
     width: 1100px !important;
     margin: 0 auto;
 }
-a.left.carousel-control {
-    
-}
+
 .brand,
 .address-bar {
     display: none;
     color: black;
 }
 
+/* For the gyphicon on our brand name */
 div.brand {
-font-size: 50px;
-font-weight: bold;
-margin-left: 40%;
-    
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 40%; 
 }
+
+/* Search bar */
 input#srch-term {
     background-color: black;
-    background-color: black;
-
-}
-
-
-
-.navbar-nav {
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 3px;
-    height: 10px;
-}
-
-.img-full {
-    min-width: 100%;
-}
-
-.brand-before,
-.brand-name {
-    text-transform: capitalize;
-}
-
-.brand-before {
-    margin: 15px 0;
-}
-
-.brand-name {
-    margin: 0;
-    font-size: 4em;
-}
-
-.tagline-divider {
-    margin: 15px auto 3px;
-    max-width: 150px;
-    border-color: #ffffff;
-}
-
-.box {
-
-    margin: 150px 0px 20px 0px;
-    padding: 0px 15px;
-    background: #ffffff;
-    background: rgba(255,255,255,0.9);
-}
-
-.intro-text {
-    text-transform: uppercase;
-    font-size: 1.25em;
-    font-weight: 400;
-    letter-spacing: 1px;
-}
-
-.img-border {
-    float: none;
-    margin: 0 auto 0;
-    border: #999999 solid 1px;
-}
-
-.img-left {
-    float: none;
-    margin: 0 auto 0;
-}
-
-footer {
-    background: #fff;
-    background: #ffffff;
-}
-
-footer p {
-    text-align: center;
-    margin: 0;
-    padding: 100px 0;
-    color: #39F7F7;
 }
 
 @media screen and (min-width:768px) {
@@ -252,28 +210,6 @@ footer p {
         font-weight: 700;
         line-height: normal;
         color: #fff;
-    }
-
-    .top-divider {
-        margin-top: 0;
-    }
-
-    .img-left {
-        float: left;
-        margin-right: 25px;
-    }
-
-    .address-bar {
-        display: inherit;
-        margin: 0;
-        padding: 0 0 40px;
-        text-align: center;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        text-transform: uppercase;
-        font-size: 1.25em;
-        font-weight: 400;
-        letter-spacing: 3px;
-        color: #ffffff;
     }
 
     .navbar {
@@ -311,14 +247,44 @@ footer p {
     }
 }
 
-@media screen and (min-width:800px) {
-    .box:after {
-        content: '';
-        display: table;
-        clear: both;
-    }
+/* styles for modals (login/signup/videos) */
+.modal-content {
+    color: black;
+    display: block;
 }
 
+/* Buttons across pages */
+.button.fav {
+    color: $color-button-text;
+    background-color: $brand-color5;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Common styles across pages with lists of drinks */
+.page-title {
+    text-align: center;
+    color: $color-text-heading;
+}
+
+.fav-list-box {
+    margin: 0;
+    text-align: center;
+    background: $color-background;
+    opacity: 0.6;
+    margin: 20px;
+    padding: 30px;
+    height: 200;
+    width: 500px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.fav-list-box.drink-name > a:link {
+    color: $color-text-strong;
+}
+
+/* Search results pages */
 .modal-content {
     color: black;
     display: block;
@@ -337,4 +303,72 @@ footer p {
     width: 600px;
     float: level;
 }
-/**/
+
+.result-list-box {
+    width: 600px;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    background: $color-background;
+    opacity: 0.6;
+    margin: 20px;
+    padding: 30px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.show-box {
+    text-align: left !important;
+    width: 600px;
+    margin: 10;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    margin: 20px;
+    padding: 30px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.description {
+    color: white;
+}
+
+.show-box > ul li {
+    list-style-type: none;
+}
+
+.show-box > p {
+    text-align: left !important;
+    font-size: 20px;
+}
+
+.result-list-box > ul li {
+    list-style-type: none;
+}
+
+.video-box {
+    color: white;
+    margin-left: 30px;
+}
+
+/* Details about a particular drink */
+.details_title {
+    text-decoration: underline;
+    padding: 10px;
+}
+
+/* footer */
+body > footer {
+    display: block;
+    height: 40px;
+    position: fixed;
+}
+
+.copy_tag {
+    font-size: 1.25em;
+    line-height: 1.6;
+    color: $color-text;
+    text-align: center;
+    display: block;
+}

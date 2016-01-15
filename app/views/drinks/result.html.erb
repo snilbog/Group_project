@@ -1,40 +1,44 @@
 
-	<div class="row">
-        <hr>
-            <h1 class="text-center"><%= @current_user.name %>s' Results!</h1>
-        <hr>
-    </div>
-<div class
 <div class="row">
-	<div class="col-md-2 title">
+        <hr>
+            <h1 class="page-title">Search Results</h1>
+        <hr>
+        <% if @current_user %>
+            <% else %>
+            <p><small>Please login/signup to add to your favorites!</small></p>
+            <% end %>
+            </div>
+            <div class="row">
+	<div class="col-md-2">
 	</div>
 		<div class="results_container col-md-8">
-			<% @drinks.each do |res| %>
-				<div>
-					<h2 class="title_color">
-						<a href="/drink/<%= res['id'] %>"><%= res['name']%></a>
-						<small class= "rating_color"></small> Rating: <%= res['rating'] %></small>
-					</h2>
-						<h3 class="ing_color"> Ingredients: </h3>
-							<ul>
-								<% res['ingredients'].each do |el| %>
-									<li class="ing_color"><%= el['textPlain'] %></li>
-								<% end %>
-							</ul>
-						<h3> Directions: <%= res['descriptionPlain'] %> </h3>
-				</div>
-			<div class="results">
-				<%= bootstrap_form_for :favorites, url: '/favorites' do |f| %>
-				<%= f.hidden_field :drink_id, :value => res['id']  %>
-				<%= f.hidden_field :description, :value => res['descriptionPlain']  %>
-				<%= f.hidden_field :img, :value => res['name']  %>
-				<%= f.hidden_field :user_id, :value => @current_user.id %>
-				<%= f.submit "Add To Favorites!", :class => "fav_color" %>
+		<% @drinks.each do |res| %>
+	<div class="result-list-box">
+		<h2>
+		<a href="/drink/<%= res['id'] %>"><%= res['name']%></a>
+		<small> Rating: <%= res['rating'] %></small></h2>
+		<h4> Ingredients: </h4>
+		<ul>
+			<% res['ingredients'].each do |el| %>
+			<li><%= el['textPlain'] %></li>
+			<% end %>
+		</ul>
+		<h4> Directions: <%= res['descriptionPlain'] %> </h4>
+	</div>
+	<div class="results">
+	<%= bootstrap_form_for :favorites, url: '/favorites' do |f| %>
+		<%= f.hidden_field :drink_id, :value => res['id']  %>
+		<%= f.hidden_field :description, :value => res['descriptionPlain']  %>
+		<%= f.hidden_field :img, :value => res['name']  %>
+		<% if @current_user %>
+	    <%= f.hidden_field :user_id, :value => @current_user.id %>
+	    <%= f.submit "I like this!", :class => "btn button fav" %>
+	    <% end %>
 				<hr/>
 				<% end %>
 			</div>
 				<% end %>
 		</div>
-	<div class="col-md-2 title">
+	<div class="col-md-2">
 	</div>
 </div>
