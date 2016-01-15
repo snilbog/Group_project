@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "/drinks/adv" => "drinks#adv_search"
   post "/drinks/adv_result" => "drinks#adv_result"
   post "/drinks/result" => "drinks#result"
+  get "/drink/:id" => "drinks#show"
 
   get "/tools" => "home#tools"
 
