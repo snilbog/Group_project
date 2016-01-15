@@ -20,8 +20,11 @@ body {
 title {
     float: center;
 }
-.open > .dropdown-menu {
+[type~="submit"] {
     color: #000;
+}
+.open > .dropdown-menu {
+    color: #fff;
 }
 .ing_color {
     color: #E5CDFA !important;
@@ -32,6 +35,7 @@ title {
 .title {
     width: 400px !important;
 }
+.dropdown-menu{background:rgba(0,0,0,0.5); color:blue; }
 header#global-header {
     background: #000000;
     left: 0;
@@ -300,6 +304,10 @@ footer p {
 .details_title {
     text-decoration: underline;
     padding: 10px;
+}
+
+.modal_title {
+    color: black !important;
 }
 
 /* WELL STYLING */
