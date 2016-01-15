@@ -90,7 +90,7 @@
   </div>
 </div>
 
-<div class="navbar navbar-inverse navbar-fixed-top navbar-custom">
+<div class="navbar navbar-inverse navbar-fixed-top navbar-custom" style="height: 102px;">
   <div class="container">
       <a href="/" class="drink-mate-logo" style="display: inline;"><div class="brand" style="font-family: Futura; text-align: center;
       ">Drink<span class="glyphicon glyphicon-glass"></span>Mate</div>
@@ -99,8 +99,9 @@
       <ul class="nav navbar-nav navbar-left">
         <li>
           <% if @current_user %>
-            Signed in as <%= @current_user.email %>
-              <%= link_to "Logout", "/logout" %>
+            Signed in as <%= @current_user.email %> | <li><%= link_to "Logout", "/logout" %></li>
+
+              
                 <% else %>
  <li> <a href="#" data-toggle="modal" data-target="#login-modal">Login</a> </li>
  <li> <a href="#" data-toggle="modal" data-target="#myModal2">Signup</a> 
