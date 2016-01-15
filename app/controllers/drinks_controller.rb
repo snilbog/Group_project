@@ -78,7 +78,24 @@ class DrinksController < ApplicationController
   end
 
   def show
-    @drinks = JSON.parse(response).first[1]
+    base_url = 'http://addb.absolutdrinks.com/drinks/' + params[:id]
+    response = RestClient.get base_url, {
+      :params => {
+        :apiKey => ENV['ABSOLUT_KEY'],
+        :start => '0',
+        :pageSize => '500'
+      }
+    }
+    @drink = JSON.parse(response)['result']
+    @video_link = nil
+      if @drink.first['videos'].first['video']
+        @video_id = @drink.first['videos'].first['video']
+        @video_link = "http://www.youtube.com/embed/" + @video_id
+        # render text: @video_link
+      else 
+      end
+
+    @image_link = "http://assets.absolutdrinks.com/drinks/transparent-background-white/soft-shadow/300x400/" + @drink.first['id'] + ".png"
   end
 
   def result
