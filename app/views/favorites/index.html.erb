@@ -13,8 +13,8 @@
                             <p><%= com.content %></p>
                         <% end %>
                     <% end %>
-                    <button id="<%= fav.id %>" class="js-delete-btn btn btn-danger">Delete</button>
-                    <%= link_to 'Add Comment', new_comment_path(fav), :class => 'btn btn-warning add-comm-btn' %>      <hr>
+                    <button id="<%= fav.id %>" class="js-delete-btn btn">Delete</button>
+                    <%= link_to 'Add Comment', new_comment_path(fav), :class => 'btn btn-default add-comm-btn' %>      <hr>
                 </div>
                 <% end %>
             </div>
