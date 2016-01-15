@@ -1,6 +1,8 @@
 <% @drinks.each do |res| %>
 	<div>
-		<h2 class="title_color"><%= res['name'] %><small class= "rating_color"> Rating: <%= res['rating'] %></small></h2>
+		<h2 class="title_color">
+		<a href="/drink/<%= res['id'] %>"><%= res['name']%></a>
+		<small class= "rating_color"> Rating: <%= res['rating'] %></small></h2>
 		<h3 class="ing_color"> Ingredients: </h3>
 		<ul>
 			<% res['ingredients'].each do |el| %>
