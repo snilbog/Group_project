@@ -1,9 +1,12 @@
-<h3 class="col-md-10 col-md-offset-1">Here on the advanced search page, you can enter what ingredients you have and find out what fun recipes you can make. Start by using the dropdown menus to select what alcohols/mixers you have.</h3>
+<div class="col-md-12 text-center">
+	<h3 class="col-md-10 col-md-offset-1">Here on the advanced search page, you can enter what ingredients you have and find out what fun recipes you can make. Start by using the dropdown menus to select what alcohols/mixers you have. Then click submit to see what recipes you can make!</h3>
+</div>
 
-<div class="container-fluid">
-	<%= form_tag("/drinks/adv_result", method: "post") do %>
-		<div class="dropdown">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Spirits
+	<row class='col-md-10 col-md-offset-1'>
+		<%= form_tag("/drinks/adv_result", method: "post") do %>
+
+		<div class="dropdown col-md-2">
+		    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Spirits
 		    <span class="caret"></span></button>
 			<ul class="dropdown-menu">
 			<% @spirits.each do |s| %>
@@ -13,19 +16,8 @@
 			</ul>
 		</div>	
 
-		<div class="dropdown">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Mixers
-		    <span class="caret"></span></button>
-			<ul class="dropdown-menu">
-			<% @mixers.each do |s| %>
-				<li><%= check_box_tag('s[]', s) %></li>
-				<%= label_tag(:s, s) %>
-				<% end %>
-			</ul>
-		</div>
-
-		<div class="dropdown">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Vodka
+		<div class="dropdown col-md-2">
+		    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Vodka
 		    <span class="caret"></span></button>
 			<ul class="dropdown-menu">
 			<% @vodka.each do |s| %>
@@ -35,8 +27,8 @@
 			</ul>
 		</div>
 
-		<div class="dropdown">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Rum
+		<div class="dropdown col-md-2">
+		    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Rum
 		    <span class="caret"></span></button>
 			<ul class="dropdown-menu">
 			<% @rum.each do |s| %>
@@ -46,8 +38,8 @@
 			</ul>
 		</div>
 
-		<div class="dropdown">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Brandy
+		<div class="dropdown col-md-2">
+		    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Brandy
 		    <span class="caret"></span></button>
 			<ul class="dropdown-menu">
 			<% @brandy.each do |s| %>
@@ -57,8 +49,8 @@
 			</ul>
 		</div>
 
-		<div class="dropdown">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Whiskey
+		<div class="dropdown col-md-2">
+		    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Whiskey
 		    <span class="caret"></span></button>
 			<ul class="dropdown-menu">
 			<% @whisky.each do |s| %>
@@ -68,8 +60,8 @@
 			</ul>
 		</div>
 
-		<div class="dropdown">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Gin
+		<div class="dropdown col-md-2">
+		    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Gin
 		    <span class="caret"></span></button>
 			<ul class="dropdown-menu">
 			<% @gin.each do |s| %>
@@ -78,9 +70,12 @@
 				<% end %>
 			</ul>
 		</div>
+	</row>
 
-		<div class="dropdown">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tequila
+
+	<row class="container-fluid">
+		<div class="dropdown col-md-2">
+		    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Tequila
 		    <span class="caret"></span></button>
 			<ul class="dropdown-menu">
 			<% @tequila.each do |s| %>
@@ -89,9 +84,20 @@
 				<% end %>
 			</ul>
 		</div>
+
+		<div class="dropdown col-md-2">
+		    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Mixers
+		    <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+			<% @mixers.each do |s| %>
+				<li><%= check_box_tag('s[]', s) %></li>
+				<%= label_tag(:s, s) %>
+				<% end %>
+			</ul>
+		</div>
 		
-		<div class="dropdown">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Spices & Herbs
+		<div class="dropdown col-md-2">
+		    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Spices & Herbs
 		    <span class="caret"></span></button>
 			<ul class="dropdown-menu">
 			<% @spices_herbs.each do |s| %>
@@ -101,8 +107,8 @@
 			</ul>
 		</div>
 		
-		<div class="dropdown">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Fruits
+		<div class="dropdown col-md-2">
+		    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Fruits
 		    <span class="caret"></span></button>
 			<ul class="dropdown-menu">
 			<% @fruits.each do |s| %>
@@ -112,8 +118,8 @@
 			</ul>
 		</div>
 
-		<div class="dropdown">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Berries
+		<div class="dropdown col-md-2">
+		    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Berries
 		    <span class="caret"></span></button>
 			<ul class="dropdown-menu">
 			<% @berries.each do |s| %>
@@ -123,31 +129,8 @@
 			</ul>
 		</div>
 
-		<div class="dropdown">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ice
-		    <span class="caret"></span></button>
-			<ul class="dropdown-menu">
-			<% @ice.each do |s| %>
-				<li><%= check_box_tag('s[]', s) %></li>
-				<%= label_tag(:s, s) %>
-				<% end %>
-			</ul>
-		</div>
-
-		<div class="dropdown">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Decorations
-		    <span class="caret"></span></button>
-			<ul class="dropdown-menu">
-			<% @decoration.each do |s| %>
-				<li><%= check_box_tag('s[]', s) %></li>
-				<%= label_tag(:s, s) %>
-				<% end %>
-			</ul>
-		</div>
-
-		<div class="dropdown">
-		    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Others
-		    <span class="caret"></span></button>
+		<div class="dropdown col-md-2">
+		    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">Others<span class="caret"></span></button>
 			<ul class="dropdown-menu">
 			<% @others.each do |s| %>
 				<li><%= check_box_tag('s[]', s) %></li>
@@ -155,7 +138,7 @@
 				<% end %>
 			</ul>
 		</div>
+	</row>
 
-		<%= submit_tag("submit") %>
+		<%= submit_tag("Submit") %>
 	<% end %>
-</div>
