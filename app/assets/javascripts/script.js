@@ -3,17 +3,19 @@ $(document).ready(function() {
 	$('.js-delete-btn').on('click', function(e) {
 		e.preventDefault();
 		var btn = $(this);
+		var url = '/favorites/' + btn.attr('id');
 		var requestType = btn.data('request-type');
 		$.ajax({
-			url: btn.attr('href'),
+			url: url,
 			method: 'DELETE',
 			dataType: 'json',
 		}).done(function(data) {
 			console.log("CLICK");
 			if(requestType === 'html') {
-				window.location = '/';
+				window.location = '/favorites';
 			} else if (data) {
 				btn.closest('#deleteMe').remove();
+				window.location = '/favorites';
 			}
 		});
 	});
