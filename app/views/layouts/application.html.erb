@@ -121,9 +121,9 @@
 
             <li>
 
-         <form class="navbar-form navbar-right"  role="search">
-          <div class="input-group" style="border-radius: none">
-            <%= bootstrap_form_tag method: :post, url: '/drinks/result', class:"navbar-form" do |f| %>
+         <!-- <form class="navbar-form navbar-right"  role="search"> -->
+        <%= bootstrap_form_tag url: drinks_result_path, class:"navbar-form" do |f| %>
+        <!-- <div class="input-group" style="border-radius: none"> -->
         <div class="input-group">
         <%= f.text_field :srch_term, hide_label: true, placeholder: "Enter a drink" %>
             <span class="input-group-btn">
@@ -132,16 +132,17 @@
                   <span class="sr-only">Close</span>
                 </span>
               </button>
-              <button type="submit" class="btn btn-default">
+              <button class="btn btn-default">
+              <%= f.submit '', :style => "display:none;" %>
                 <span class="glyphicon glyphicon-search">
                   <span class="sr-only">Search</span>
                 </span>
               </button>
             </span>
           </div>
-        </form>
         <% end %>
-           </div>
+        <!-- </form> -->
+           <!-- </div> -->
        </div>
     </div>
     </div>
