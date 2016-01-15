@@ -18,4 +18,8 @@ class HomeController < ApplicationController
   	@video_link = nil
       
   end
+
+  def team
+    
+  end
 end

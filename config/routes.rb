@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get "/drink/:id" => "drinks#show"
 
   get "/tools" => "home#tools"
+  get "/team" => "home#team"
 
   root 'home#index'
   resources :favorites

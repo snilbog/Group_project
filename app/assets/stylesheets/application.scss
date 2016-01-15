@@ -73,12 +73,26 @@ title {
 .navbar-custom {
     color: #FFFFFF;
     background-color: $navbar-background !important;
+
 }
+button.btn {
+    height: 25px;
+    margin-top: 7px;
+}
+input#srch_term {
+    height: 25px;
+    margin-top: 7px;
+
+}
+
 .dir_color {
     color: #CBF09C !important;
 }
 .title {
     width: 400px !important;
+}
+.page-header{
+     color: #E5CDFA !important;
 }
 
 header#global-header {
