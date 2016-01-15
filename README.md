@@ -4,6 +4,7 @@ Explanations of the technologies used:
 Ruby on Rails for backend and database
 JQuery for layout and styling of JavaScript
 Bootstrap for frontend styling and responsiveness
+Postgresql for database
 
 ***********
 A couple paragraphs about the general approach you took:
