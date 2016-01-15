@@ -1,3 +1,30 @@
+<<<<<<< HEAD
+        <div class="row">
+                <div class="col-lg-12">
+                    <hr>
+                    <h1 class="text-center"><%= @current_user.name %>s' Favorites!</h1>
+                    <hr>
+                </div>
+                <% @favorites.each do |fav| %>
+                <div class="col-lg-12 text-center">
+                    <h3 class="title_color"> <%= link_to fav.img, fav %> </h3>
+                    <p> <%= fav.description %></p>
+                    <% @comments.each do |com| %>
+                        <% if com.drink_id.to_s == fav.id.to_s %>
+                            <p><%= com.content %></p>
+                        <% end %>
+                    <% end %>
+                    <button id="<%= fav.id %>" class="js-delete-btn btn btn-danger">Delete</button>
+                    <%= link_to 'Add Comment', new_comment_path(fav), :class => 'btn btn-warning add-comm-btn' %>      <hr>
+                </div>
+                <% end %>
+            </div>
+        </div>
+  
+  <div class="container"> 
+    <p class="copy_tag">Copyright &copy; DRINKMATE</p>  
+    </div>
+=======
 <div class="container">
 <div class="row">
     <div><hr><h1 class="page-title">Your Favorite Drinks</h1><hr></div>
@@ -16,3 +43,4 @@
 <% end %>
 </div>
 </div>
+>>>>>>> ef5c5532aa2b604fc4c59328f4b18a54d463a407
