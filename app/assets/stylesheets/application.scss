@@ -1,4 +1,8 @@
-
+.dropdown-menu {
+    max-height: 400px;
+    overflow: hidden;
+    overflow-y: auto;
+}
 
 
 /* Color scheme created from one of carousel images 
@@ -73,6 +77,9 @@ title {
 }
 .title {
     width: 400px !important;
+}
+.page-header{
+     color: #E5CDFA !important;
 }
 
 header#global-header {

@@ -102,6 +102,7 @@
             Signed in as <%= @current_user.email %>
               <%= link_to "Logout", "/logout" %>
                 <% else %>
+<<<<<<< HEAD
                 <li> <a href="#" data-toggle="modal" data-target="#login-modal">Login</a> </li>
                 <li> <a href="#" data-toggle="modal" data-target="#myModal2">Signup</a> 
               </li>
@@ -121,6 +122,28 @@
 
   <!-- <div class="input-group" style="border-radius: none"> -->
       <%= bootstrap_form_tag url: drinks_result_path, class:"navbar-form navbar-right" do |f| %>
+=======
+ <li> <a href="#" data-toggle="modal" data-target="#login-modal">Login</a> </li>
+ <li> <a href="#" data-toggle="modal" data-target="#myModal2">Signup</a> 
+ </li>
+<% end %>
+   </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="/team">Team</a></li>
+            <% if @current_user %>
+            <li><a href="/favorites">Favorites</a></li>
+              <% else %>
+              <% end  %>
+            <li><a href="/drinks/adv">Advanced Search</a></li>
+            <li><a href="/tools">Tools</a></li>
+
+            <li>
+
+         <form class="navbar-form navbar-right"  role="search">
+          <div class="input-group" style="border-radius: none">
+            <%= bootstrap_form_tag method: :post, url: '/drinks/result', class:"navbar-form" do |f| %>
+>>>>>>> 1f759794bcacdeba016e39ad6c2ad2d683e44d9b
         <div class="input-group">
         <%= f.text_field :srch_term, hide_label: true, placeholder: "Enter a drink" %>
       <span class="input-group-btn">
