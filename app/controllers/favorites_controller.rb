@@ -57,12 +57,7 @@ class FavoritesController < ApplicationController
   private
 
   def post_params
-    if @current_user
-      render text: "hello"
-      # params.require(:favorites).permit(:drink_id, :description, :img)
-    else
-      redirect_to '/login'
-    end
+      params.require(:favorites).permit(:drink_id, :description, :img, :user_id)
   end
 
 end
