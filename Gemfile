@@ -35,6 +35,8 @@ gem 'rest-client'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+gem 'rails_12factor', group: :production
+
 gem "pry-rails", :group => :development
 
 # Use Capistrano for deployment
