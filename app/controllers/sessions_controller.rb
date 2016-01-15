@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      flash[:success] = nil
       redirect_to root_path
     else
       flash[:danger] = "Credentials Invalid!"
