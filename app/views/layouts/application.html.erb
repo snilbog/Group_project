@@ -14,15 +14,14 @@
     <link rel="icon" href="../../favicon.ico">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </head> 
 
 <title>DRINKMATE</title>
 
 <body>
-<!-- Modal -->
- <div class="modal fade" id="myModal" role="dialog">
+ <div class="modal fade" id="login-modal" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -32,16 +31,17 @@
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          
-<h1>Login</h1>
+
+<h1><span style="color: black">Login</span></h1>
 <div>
+<div class="form-group">
 <%= form_for :user, url: login_path, class: "form-group" do |f| %>
-  <%= f.text_field :email, placeholder: "Enter your email" %>
+  <%= f.text_field :email, placeholder: "Enter your email", style: 'display: block', class: "form-control" %>
+  <br>
+  <%= f.password_field :password, placeholder: "Enter your password", style: 'display: block', class: "form-control"%>
+  <br>
+  <%= f.submit "Login",  class: "btn btn-default btn-success"%>
   </div>
-  <div class="form-group">
-  <%= f.password_field :password, placeholder: "Enter your password"%>
-  
-  <%= f.submit "Login"%>
   </div>
 <% end %>
 
@@ -68,14 +68,17 @@
         </div>
         <div class="modal-body">
           
-<h1>Signup</h1>
+<h1><span style="color: black">Signup!</span></h1>
 
 <%= form_for :user, url: '/users' do |f| %>
 
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  <%= f.submit "Submit" %>
+  Name: <%= f.text_field :name, style: 'display: block', class: "form-control" %>
+  <br>
+  Email: <%= f.text_field :email, style: 'display: block', class: "form-control"%>
+  <br>
+  Password: <%= f.password_field :password, style: 'display: block', class: "form-control" %>
+  <br>
+  <%= f.submit "Submit", class: "btn btn-default btn-success"%>
 
 <% end %>
         </div>
@@ -92,7 +95,6 @@
       <a href="/" class="drink-mate-logo" style="display: inline;"><div class="brand" style="font-family: Futura; text-align: center;
 ">Drink<span class="glyphicon glyphicon-glass"></span>Mate</div>
   </a>
-        <a class="navbar-brand text-muted" href="#"></a>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
             <li>
@@ -100,40 +102,48 @@
               Signed in as <%= @current_user.email %>
                 <%= link_to "Logout", "/logout" %>
                 <% else %>
- <li> <a href="#" data-toggle="modal" data-target="#myModal">Login</a> </li>
+ <li> <a href="#" data-toggle="modal" data-target="#login-modal">Login</a> </li>
  <li> <a href="#" data-toggle="modal" data-target="#myModal2">Signup</a> 
  </li>
 <% end %>
     <%= render "partials/flash" %>
-      </ul>
 
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/">About</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">About</a></li>
             <% if @current_user %>
-          <li><a href="/favorites">Favorites</a></li>
-            <% else %><% end  %>
-          <li><a href="/drinks/adv">Advanced Search</a></li>
-          <li><a href="/tools">Tools</a></li>
-          <li>
-            <div class="input-group" style="border-radius: none">
-            <%= bootstrap_form_tag method: :post, url: '/drinks/result', class:"navbar-form" do |f| %>
-              <form class="navbar-form"  role="search">
-                <div class="input-group">
-                <%= f.text_field :srch_term, hide_label: true, placeholder: "Enter a drink" %>
-                  <span class="input-group-btn"> 
-                    <button type="reset" class="btn btn-default"><span class="glyphicon glyphicon-remove"><span class="sr-only">Close</span></span></button>
-                    
-                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"><span class="sr-only">Search</span>
-                      </span></button>
-                  </span>
-                </div>
-              </form>
-            <% end %>
-          </li>
-        </ul>
+            <li><a href="/favorites">Favorites</a></li>
+              <% else %>
+              <% end  %>
+            <li><a href="/drinks/adv">Advanced Search</a></li>
+            <li><a href="/tools">Tools</a></li>
 
+            <li>
+
+         <form class="navbar-form navbar-right"  role="search">
+          <div class="input-group" style="border-radius: none">
+            <%= bootstrap_form_tag method: :post, url: '/drinks/result', class:"navbar-form" do |f| %>
+        <div class="input-group">
+        <%= f.text_field :srch_term, hide_label: true, placeholder: "Enter a drink" %>
+            <span class="input-group-btn">
+              <button type="reset" class="btn btn-default">
+                <span class="glyphicon glyphicon-remove">
+                  <span class="sr-only">Close</span>
+                </span>
+              </button>
+              <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search">
+                  <span class="sr-only">Search</span>
+                </span>
+              </button>
+            </span>
+          </div>
+        </form>
+        <% end %>
            </div>
        </div>
+    </div>
     </div>
 
    <%= yield %>

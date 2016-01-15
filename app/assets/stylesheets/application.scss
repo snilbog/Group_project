@@ -1,18 +1,5 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+
 
 /* Color scheme created from one of carousel images 
 * Custom theme: https://color.adobe.com/library/7018299d-d425-4e15-afb5-fc16fb7a5dea/theme/4ece2645-96d9-40a2-8e0f-3f962f68aa54/
@@ -63,16 +50,29 @@ body {
     -o-background-size: cover;
     color: $color-text !important;
     /* match the height of global-header (height + padding + margin + border)*/
-    padding-top: 140px; 
+    padding-top: 140px; /* match the height of global-header (height + padding + margin + border)*/
 }
 
 title {
     float: center;
 }
 
+.h1, h1 {
+    font-size: 36px;
+    color: black;
+}
+.ing_color {
+    color: #E5CDFA !important;
+}
 .navbar-custom {
     color: #FFFFFF;
     background-color: #CC3333;
+}
+.dir_color {
+    color: #CBF09C !important;
+}
+.title {
+    width: 400px !important;
 }
 
 header#global-header {
@@ -96,6 +96,37 @@ div.container {
 .nav > li {
     font-size: 10px;
     padding-left: 10px;
+    height: 80px;
+    padding: 0px;
+    margin: 0px;
+}
+div.indexcontainer {
+    background-color: #262626;
+    border: 1px solid black;
+    color: #black;
+    width: 100%;
+    
+}
+div.panel-body > p {
+    color: black;
+}
+div.panel-heading > h4 {
+    color: black;
+}
+div.panel-heading {
+    background-color: #262626;
+}
+div.box {
+    postion: relative
+}
+li {
+    font-size: 10px;
+}
+h6 {
+    width: 300px;
+    margin: 50px 0px 0px 0px;
+    position: relative;
+    
 }
 
 nav#global-nav.navbar {
@@ -130,18 +161,6 @@ form.navbar-form {
     height: 10px;
 }
 
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {
-//     font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-//     font-weight: 700;
-//     letter-spacing: 1px;
-//     color: #ffffff !important;
-// }
-
 p {
     font-size: 1.25em;
     line-height: 1.6;
@@ -156,13 +175,9 @@ hr {
 
 /* Carousel on the index page */
 #myCarousel > div > div > img  {
-    height: 440px !important;
-    width: 900px !important;
+    height: 570px !important;
+    width: 1100px !important;
     margin: 0 auto;
-}
-
-a.left.carousel-control {
-    width: 60px;
 }
 
 .brand,
@@ -173,6 +188,7 @@ a.left.carousel-control {
 
 /* For the gyphicon on our brand name */
 div.brand {
+<<<<<<< HEAD
     font-size: 50px;
     font-weight: bold;
     margin-left: 40%; 
@@ -270,7 +286,21 @@ input#srch-term {
 }
 
 /* Search results pages */
-.results_container {
+.modal-content {
+    color: black;
+    display: block;
+}
+.modal-body {
+    display: inline;
+}
+
+.details_title {
+    text-decoration: underline;
+    padding: 10px;
+}
+
+/* WELL STYLING */
+.results_container{
     width: 600px;
     float: level;
 }
