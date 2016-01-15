@@ -5,8 +5,8 @@
                     <hr>
                 </div>
                 <% @favorites.each do |fav| %>
-                <div class="col-sm-4">
-                    <h3> <%= link_to fav.img, fav %> </h3>
+                <div class="col-lg-12 text-center">
+                    <h3 class="title_color"> <%= link_to fav.img, fav %> </h3>
                     <p> <%= fav.description %></p>
                     <% @comments.each do |com| %>
                         <% if com.drink_id.to_s == fav.id.to_s %>
@@ -14,7 +14,7 @@
                         <% end %>
                     <% end %>
                     <%= link_to 'Delete', fav, :class => 'js-delete-btn btn btn-danger' %>
-                    <%= link_to 'Add Comment', new_comment_path(fav), :class => 'btn btn-warning add-comm-btn' %> 
+                    <%= link_to 'Add Comment', new_comment_path(fav), :class => 'btn btn-warning add-comm-btn' %>      <hr>
                 </div>
                 <% end %>
             </div>
