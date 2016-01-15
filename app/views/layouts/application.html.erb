@@ -102,27 +102,6 @@
             Signed in as <%= @current_user.email %>
               <%= link_to "Logout", "/logout" %>
                 <% else %>
-<<<<<<< HEAD
-                <li> <a href="#" data-toggle="modal" data-target="#login-modal">Login</a> </li>
-                <li> <a href="#" data-toggle="modal" data-target="#myModal2">Signup</a> 
-              </li>
-          <% end %>
-      </ul>
-
-<ul class="nav navbar-nav navbar-right">
-<li><a href="/about">About</a></li>
-<% if @current_user %>
-<li><a href="/favorites">Favorites</a></li>
-<% else %>
-<% end  %>
-<li><a href="/drinks/adv">Advanced Search</a></li>
-<li><a href="/tools">Tools</a></li>
-
-<!--Search bar for one item -->
-
-  <!-- <div class="input-group" style="border-radius: none"> -->
-      <%= bootstrap_form_tag url: drinks_result_path, class:"navbar-form navbar-right" do |f| %>
-=======
  <li> <a href="#" data-toggle="modal" data-target="#login-modal">Login</a> </li>
  <li> <a href="#" data-toggle="modal" data-target="#myModal2">Signup</a> 
  </li>
@@ -140,28 +119,27 @@
 
             <li>
 
-         <form class="navbar-form navbar-right"  role="search">
-          <div class="input-group" style="border-radius: none">
-            <%= bootstrap_form_tag method: :post, url: '/drinks/result', class:"navbar-form" do |f| %>
->>>>>>> 1f759794bcacdeba016e39ad6c2ad2d683e44d9b
-        <div class="input-group">
-        <%= f.text_field :srch_term, hide_label: true, placeholder: "Enter a drink" %>
-      <span class="input-group-btn">
-        <button type="reset" class="btn btn-default">
-          <span class="glyphicon glyphicon-remove">
-          <span class="sr-only">Close</span>
-        </span>
-        </button>
-        <button class="btn btn-default">
-        <% f.submit '', :style => "display:none;" %>
-        <span class="glyphicon glyphicon-search">
-        <span class="sr-only">Search</span>
-        </span>
-      </button>
-    </span>
-  </div>
-
-    <% end %>
+        <!--  <form class="navbar-form navbar-right"  role="search">
+          <div class="input-group" style="border-radius: none"> -->
+            <%= bootstrap_form_tag url: drinks_result_path, class:"navbar-form" do |f| %>
+       <!-- <div class="input-group" style="border-radius: none"> -->
+       <div class="input-group">
+       <%= f.text_field :srch_term, hide_label: true, placeholder: "Enter a drink" %>
+           <span class="input-group-btn">
+             <button type="reset" class="btn btn-default">
+               <span class="glyphicon glyphicon-remove">
+                 <span class="sr-only">Close</span>
+               </span>
+             </button>
+             <button class="btn btn-default">
+             <%= f.submit '', :style => "display:none;" %>
+               <span class="glyphicon glyphicon-search">
+                 <span class="sr-only">Search</span>
+               </span>
+             </button>
+           </span>
+         </div>
+       <% end %>
       </div>
     </div>
   </div>
