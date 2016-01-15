@@ -19,6 +19,7 @@ $(document).ready(function() {
 	});
 });
 
+
 autoPlayYouTubeModal();
 
 //FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
