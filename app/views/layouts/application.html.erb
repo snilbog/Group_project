@@ -31,7 +31,7 @@
     </div>
     <div class="modal-body">
 
-<h1><span style="color: black">Login</span></h1>
+<h1><span style="color: black">Welcome Back</span></h1>
 <div>
     <div class="form-group">
 
@@ -118,9 +118,9 @@
 <li><a href="/tools">Tools</a></li>
 
 <!--Search bar for one item -->
-<form class="navbar-form navbar-right"  role="search">
-  <div class="input-group" style="border-radius: none">
-      <%= bootstrap_form_tag method: :post, url: '/drinks/result', class:"navbar-form" do |f| %>
+
+  <!-- <div class="input-group" style="border-radius: none"> -->
+      <%= bootstrap_form_tag url: drinks_result_path, class:"navbar-form navbar-right" do |f| %>
         <div class="input-group">
         <%= f.text_field :srch_term, hide_label: true, placeholder: "Enter a drink" %>
       <span class="input-group-btn">
@@ -129,14 +129,15 @@
           <span class="sr-only">Close</span>
         </span>
         </button>
-        <button type="submit" class="btn btn-default">
+        <button class="btn btn-default">
+        <% f.submit '', :style => "display:none;" %>
         <span class="glyphicon glyphicon-search">
         <span class="sr-only">Search</span>
         </span>
       </button>
     </span>
   </div>
-</form>
+
     <% end %>
       </div>
     </div>
