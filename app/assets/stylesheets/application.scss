@@ -358,10 +358,10 @@ input#srch-term {
     background: $color-background-shade;
     margin: 20px;
     padding: 100px !important;
-    padding-top: 0px;
+    width: 800px;
     display: inline-block;
     text-decoration: none;
-    height: 100% !important;
+    // height: 100% !important;
 }
 
 .description {
@@ -374,13 +374,13 @@ input#srch-term {
     font-weight: bold;
 }
 
-.show-box > ul li {
-    list-style-type: none;
-}
-
 .show-box > p {
     text-align: left !important;
     font-size: 20px;
+}
+
+.show-box > ul {
+    list-style-type: none;
 }
 
 .result-list-box > ul li {
