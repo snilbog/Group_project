@@ -1,6 +1,6 @@
 
 <div class="row">
-    <hr><h1 class="page-title">Search Results</h1><hr>
+    <h1 class="page-title">Search Results</h1>
     <% if @current_user %>
     <% else %>
 	    <p><small>Please login/signup to add to your favorites!</small></p>
@@ -9,7 +9,8 @@
 <div>
 	<% @drinks.each do |res| %>
 		<div class="fav-list-box description">
-			<h2 class="drink-name"><a href="/drink/<%= res['id'] %>"><%= res['name']%></a><small class="sub-description"> Rating: <%= res['rating'] %></small></h2>
+			<h2 class="drink-name"><a href="/drink/<%= res['id'] %>"><%= res['name']%></a>
+			<p><small class="sub-description"> Rating: <%= res['rating'] %></small></p></h2>
 			<ul>
 				<% res['ingredients'].each do |el| %>
 					<li><%= el['textPlain'] %></li>
@@ -25,8 +26,7 @@
 				<% if @current_user %>
 			    	<%= f.hidden_field :user_id, :value => @current_user.id %>
 			    	<%= f.submit "I like this!", :class => "btn button fav" %>
-				<% end %>
-				<hr>
+				<% end %><br><br>
 			<% end %>
 		</div>
 	<% end %>
