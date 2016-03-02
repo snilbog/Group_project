@@ -1,5 +1,4 @@
-
-<div class="container">
+<div class="row">
     <div class="row show-box">
         <h2><%= @drink.first['name'] %>
             <% if @video_link %>
@@ -21,17 +20,16 @@
         </div>
         <img alt="Picture of drink" src="<%= @image_link %>">
     </div>
-    <div class="row show-box">
+    <div class="row show-box show-box-2">
         <div class="col-md-6">
             <h4 class="details_title">Description</h4>
-            <h4><%= @drink.first['descriptionPlain'] %></h4>
-            <p>Taste(s) : 
+            <p>Taste : 
                 <% @drink.first['tastes'].each do |t| %>
                     <%= t['text'] %> 
                 <% end %>
             </p>
 
-            <p>Occasion(s) : 
+            <p>Occasion : 
                 <% @drink.first['occasions'].each do |t| %>
                 <%= t['text'] %> 
                 <% end %>
@@ -58,34 +56,25 @@
             <% elsif @drink.first['isCarbonated'] == true %>
                 <p> Carbonated </p>
             <% end %>
+            <h4 class="details_title">Instructions</h4>
+            <p><%= @drink.first['descriptionPlain'] %></p>
         </div>
 
         <div class="col-md-6">
             <h4 class="details_title">Ingredients</h4>
             <ul>
                 <% @drink.first['ingredients'].each do |i| %>
-                <li><h4><%= i['textPlain'] %></h4></li>
+                <li><p><%= i['textPlain'] %></p></li>
                 <% end %>
             </ul>
 
-            <h4 class="details_title">Tools</h4>
+            <h4 class="details_title">Required Tools</h4>
             <ul>
                 <% @drink.first['tools'].each do |i| %>
-                <li><h4><%= i['text'] %></h4></li>
+                <li><p><%= i['text'] %></p></li>
                 <% end %>
             </ul>
         </div>
-            <% if @comments %>
-                <h3 class="details_title">Comments</h3>
-            <% end %>
-            <% @comments.each do |comm| %>
-            	<div id="deleteMe comment">
-            		<h4> You: <%= comm.content %> </h4>
-            	</div>
-            <% end %>
-            <div>   
-                <button class="btn button btn-sm fav" onclick="goBack()" class="btn btn-default">Go Back</button>
-            </div>
     </div>
 </div>
 
