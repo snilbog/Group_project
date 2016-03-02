@@ -84,7 +84,7 @@
 
 
 <!-- navbar starts here -->
-<div class="navbar navbar-inverse navbar-fixed-top navbar-custom" style="height: 102px;">
+<div class="navbar navbar-inverse navbar-fixed-top navbar-custom" style="height: 150px;">
   <div class="container">
       <a href="/" class="drink-mate-logo" style="display: inline;"><div class="brand" style="font-family: Futura; text-align: center;
       ">Drink<span class="glyphicon glyphicon-glass"></span>Mate</div>
@@ -100,50 +100,50 @@
       </div>
 
       <div class="nav-collapse">
-        <ul class="nav navbar-nav">
-          <li>
+        <ul class='nav navbar-nav navbar'>
             <% if @current_user %>
               Signed in as <%= @current_user.email %> | <li><%= link_to "Logout", "/logout" %></li>
-
-
                   <% else %>
           <li> <a href="#" data-toggle="modal" data-target="#login-modal">Login</a> </li>
-          <li> <a href="#" data-toggle="modal" data-target="#myModal2">Signup</a>
-          </li>
+          <li> <a href="#" data-toggle="modal" data-target="#myModal2">Signup</a></li>
                   <% end %>
-
-          <li><a href="/team">Team</a></li>
+          <li><a href="/team" class='pull-left'>Team</a></li>
           <% if @current_user %>
           <li><a href="/favorites">Favorites</a></li>
             <% else %>
             <% end  %>
           <li><a href="/drinks/adv">Advanced Search</a></li>
           <li><a href="/tools">Tools</a></li>
-          <li>
-          <%= bootstrap_form_tag url: drinks_result_path, class:"navbar-form navbar-right" do |f| %>
-            <div class="input-group">
-              <%= f.text_field :srch_term, hide_label: true, placeholder: "Enter a drink" %>
-              <span class="input-group-btn">
-                <button type="reset" class="btn btn-default">
-                  <span class="glyphicon glyphicon-remove">
-                    <span class="sr-only">Close</span>
-                  </span>
-                </button>
-                <button class="btn btn-default">
-                  <%= f.submit '', :style => "display:none;" %>
-                  <span class="glyphicon glyphicon-search">
-                    <span class="sr-only">Search</span>
-                  </span>
-                </button>
-              </span>
-            </div>
-          <% end %>
+          <li class='pull-left'>
+            <%= bootstrap_form_tag url: drinks_result_path, id:"navbar-form" do |f| %>
+              <div class="input-group">
+                <%= f.text_field :srch_term, hide_label: true, placeholder: "Enter a drink" %>
+                <span class="input-group-btn">
+                  <button type="reset" class="btn btn-default">
+                    <span class="glyphicon glyphicon-remove">
+                      <span class="sr-only">Close</span>
+                    </span>
+                  </button>
+                  <button class="btn btn-default">
+                    <%= f.submit '', :style => "display:none;" %>
+                    <span class="glyphicon glyphicon-search">
+                      <span class="sr-only">Search</span>
+                    </span>
+                  </button>
+                </span>
+              </div>
+            <% end %>
           </li>
         </ul>
-
       </div>
+
     </div>
   </div>
+
+
+
+
+
 
   <div>
     <%= render "partials/flash" %>

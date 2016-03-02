@@ -6,7 +6,7 @@
 }
 
 
-/* Color scheme created from one of carousel images 
+/* Color scheme created from one of carousel images
 * Custom theme: https://color.adobe.com/library/7018299d-d425-4e15-afb5-fc16fb7a5dea/theme/4ece2645-96d9-40a2-8e0f-3f962f68aa54/
 * Modify colors here if you need to
 */
@@ -111,23 +111,15 @@ header#global-header {
 div.container {
     height: 100px;
     padding: 0px;
-    margin: 0px;   
-    
-}
-
-.nav > li {
-    font-size: 10px;
-    padding-left: 10px;
-    height: 80px;
-    padding: 0px;
     margin: 0px;
+
 }
 div.indexcontainer {
     background-color: #262626;
     border: 1px solid black;
     color: #black;
     width: 100%;
-    
+
 }
 div.panel-body > p {
     color: black;
@@ -148,34 +140,24 @@ h6 {
     width: 300px;
     margin: 50px 0px 0px 0px;
     position: relative;
-    
+
+}
+.nav > li {
+    font-size: 10px;
+    padding-left: 10px;
+    height: 80px;
+    padding: 0px;
+    margin: 0px;
+    float: none;
 }
 
-nav#global-nav.navbar {
-    text-align: center;
-    padding-left: 285px;
-    margin: 1px;
-    font-weight:light;
-    font-family: Futura;
-    border: solid gray 1px;
-    border-color: #gray;
-    height: 30px;
-    width: 1000px;
-    text-transform: uppercase;
-}
-
-nav#global-nav.navbar > a{
- color: #gray;
-}
-
-form.navbar-form {
+li > form {
    display: inline;
    height: 43px;
    border-radius: none;
    margin-right: -110px;
    background-color: #00000 !important;
 }
-
 .navbar-nav {
     text-transform: uppercase;
     font-weight: 400;
