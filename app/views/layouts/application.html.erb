@@ -100,23 +100,23 @@
       </div>
 
       <div class="nav-collapse">
-        <ul class='nav navbar-nav navbar'>
+        <ul class='nav navbar-nav navbar-right'>
             <% if @current_user %>
               Signed in as <%= @current_user.email %> | <li><%= link_to "Logout", "/logout" %></li>
                   <% else %>
           <li> <a href="#" data-toggle="modal" data-target="#login-modal">Login</a> </li>
           <li> <a href="#" data-toggle="modal" data-target="#myModal2">Signup</a></li>
                   <% end %>
-          <li><a href="/team" class='pull-left'>Team</a></li>
+          <li><a href="/team">Team</a></li>
           <% if @current_user %>
           <li><a href="/favorites">Favorites</a></li>
             <% else %>
             <% end  %>
           <li><a href="/drinks/adv">Advanced Search</a></li>
           <li><a href="/tools">Tools</a></li>
-          <li class='pull-left'>
+          <li>
             <%= bootstrap_form_tag url: drinks_result_path, id:"navbar-form" do |f| %>
-              <div class="input-group">
+              <div class="input-group col-xs-12">
                 <%= f.text_field :srch_term, hide_label: true, placeholder: "Enter a drink" %>
                 <span class="input-group-btn">
                   <button type="reset" class="btn btn-default">

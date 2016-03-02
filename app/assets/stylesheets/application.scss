@@ -77,6 +77,10 @@ title {
     color: #FFFFFF;
     background-color: $navbar-background !important;
 
+}.navbar-custom li {
+    color: #FFFFFF;
+    background-color: $navbar-background !important;
+
 }
 button.btn {
     height: 25px;
@@ -228,6 +232,9 @@ input#srch-term {
 
     .navbar {
         min-height: 0;
+    }
+    #navbarID {
+        background-color: #1F1F1F !important;
     }
 
     .navbar-default {
