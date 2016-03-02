@@ -1,3 +1,4 @@
+
 .dropdown-menu {
     color: #000;
     max-height: 400px;
@@ -7,6 +8,7 @@
 
 
 /* Color scheme created from one of carousel images
+
 * Custom theme: https://color.adobe.com/library/7018299d-d425-4e15-afb5-fc16fb7a5dea/theme/4ece2645-96d9-40a2-8e0f-3f962f68aa54/
 * Modify colors here if you need to
 */
@@ -275,7 +277,8 @@ input#srch-term {
 .drink-name {
     text-align: center;
     color: $color-text;
-    size: 30px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .drink-name :link, .drink-name :visited, .drink-name :hover {
@@ -285,18 +288,20 @@ input#srch-term {
 
 .sub-description {
     color: $color-text-strong;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .fav-list-box {
     border: 2px solid;
-    border-radius: 25px;
+    border-radius: 10px;
     margin: 0;
     text-align: center;
     background: $color-background;
-    opacity: 0.6;
+    opacity: 0.8;
     margin: 20px;
     padding: 30px;
-    width: 500px;
+    width: 50%;
     display: inline-block;
     text-decoration: none;
 }
@@ -334,16 +339,19 @@ input#srch-term {
 // }
 
 .show-box {
-    border: 2px solid;
-    border-radius: 25px;
+    // border: 1px solid;
+    border-radius: 10px;
     text-align: center;
-    background: $color-background-shade;
-    margin: 20px;
-    padding: 100px !important;
-    width: 800px;
+    background-color: $color-background-shade;
+    margin: 10px;
+    padding: 50px !important;
+    width: 80%;
     display: inline-block;
     text-decoration: none;
-    // height: 100% !important;
+}
+
+.show-box-2 {
+    background-color: $color-background-invert;
 }
 
 .description {
@@ -356,12 +364,12 @@ input#srch-term {
     font-weight: bold;
 }
 
-.show-box > p {
-    text-align: left !important;
-    font-size: 20px;
+.show-box-2 p {
+    text-align: center !important;
+    font-size: 15px;
 }
 
-.show-box > ul {
+.show-box > ul li {
     list-style-type: none;
 }
 
@@ -376,8 +384,34 @@ input#srch-term {
 
 /* Details about a particular drink */
 .details_title {
-    text-decoration: underline;
+    text-decoration: none;
+    text-transform: uppercase;
     padding: 10px;
+    color: grey;
+}
+
+/* Advance Search Page */
+.dropdown {
+    color: black;
+}
+
+.dropdown-menu {
+    color: #000;
+    max-height: 250px;
+    width: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+    padding-left: 10px;
+}
+
+.dropdown-toggle {
+    height:40px !important;
+    width: 100%;
+}
+
+.checkbox_item {
+    font-size: 15px;
+    padding: 5px;
 }
 
 /* footer */
