@@ -1,21 +1,18 @@
 <div class="row">
-<div class="container video-box">
-<% @tools.each do |tool| %>
-<div class="container video-box">
-	<h2><%= tool['name'] %></h2>
-	<% tool['videos'].each do |v| %>
-		<% @video = v['video'] %>
+	<% @tools.each do |tool| %>
+	<div class="row show-box">
+		<h2 class="details_title"><%= tool['name'] %></h2>
+		<% tool['videos'].each do |v| %>
+			<% @video = v['video'] %>
 
-		<video width="320" height="240" controls>
-		<source src="http://assets.absolutdrinks.com/videos/<%= @video %>" type="video/mp4">
-		</video>
+			<video width="320" height="240" controls>
+			<source src="http://assets.absolutdrinks.com/videos/<%= @video %>" type="video/mp4">
+			</video>
 
+		<% end %>
+
+		<p><%= tool['description'] %></p>
+	</div>
 	<% end %>
 
-	<p><%= tool['description'] %></p>
-
-<% end %>
-</div>
-
-</div>
 </div>
